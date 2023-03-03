@@ -2,4 +2,4 @@ Hello, World!
 
 This is a text file used to test git :
 
-This is a branch change!
+This is a branch change! another change
