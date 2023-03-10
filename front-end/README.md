@@ -14,12 +14,16 @@ See [Vite Configuration Reference](https://vitejs.dev/config/).
 
 ```sh
 npm install
+or
+sudo npm install
 ```
 
 ### Compile and Hot-Reload for Development
 
 ```sh
 npm run dev
+or 
+sudo npm run dev
 ```
 
 ### Compile and Minify for Production
