@@ -9,7 +9,7 @@ import Cate_Btn from './components/Cate_Btn.vue' // import category buttons
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
-      <Cate_Btn />   <!--I added the button here just to make sure it accutally shows up on the page-->
+      <Cate_Btn />   <!--I added the buttons here just to make sure they accutally show up on the page-->
       <HelloWorld msg="You did it!" />
 
       <nav>
