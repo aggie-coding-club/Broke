@@ -1,9 +1,9 @@
 <template>
     <div class="logo-wrapper">
+        <img src="@/assets/broke-logo.png" alt="logo" class="logo-picture">
         <div class="broke-text">
             <h2>Broke</h2>
         </div>
-        <img src="@/assets/broke-logo.png" alt="logo" class="logo-picture">
     </div>
 </template>
 
@@ -12,7 +12,8 @@
 .logo-wrapper{
     height: 163px;
     display: flex;
-    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }
 
 .logo-picture{
