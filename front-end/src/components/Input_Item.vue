@@ -14,6 +14,10 @@ let input = ref("");
 </script>
 
 <style scoped>
+.search_icon {
+  width: 200px;
+
+}
 .inputitem {
     display: flex;
     color:rgb(0, 0, 0);
@@ -26,7 +30,7 @@ input {
   width: 500px;
   margin: 20px auto;
   padding: 10px 45px;
-  background: rgb(224, 223, 223);
+  background: rgb(244, 244, 244) url("@/assets/search-icon.svg") no-repeat 20px center;
   background-size: 15px 15px;
   font-size: 16px;
   border: none;
@@ -36,13 +40,4 @@ input {
 }
 
 
-.item {
-  width: 350px;
-  margin: 0 auto 10px auto;
-  padding: 10px 20px;
-  color: rgb(0, 0, 0);
-  border-radius: 5px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
-    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
-}
 </style>
