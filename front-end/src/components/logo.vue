@@ -1,8 +1,6 @@
 <template>
     <div class="logo-wrapper">
-        <div class="logo-picture">
-            <img src="@/assets/broke-logo.png" alt="logo">
-        </div>
+            <img src="@/assets/broke-logo.png" alt="logo" class="logo-picture">
     </div>
 </template>
 
@@ -13,4 +11,5 @@
     height: 163px;
     width: 169px;
 }
+
 </style>
