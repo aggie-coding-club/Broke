@@ -9,14 +9,21 @@
         <h2>Current Location</h2>
     </div>
     <input type="text" v-model="input" placeholder="Search..." />
+
+    <div class = "title">
+        <h2>Search Radius (miles)</h2>
+    </div>
+    <button class ="buttons">1</button>
+    <button class ="buttons">5</button>
+    <button class ="buttons">10</button>
+    <button class ="buttons">15</button>
+    <button class ="buttons">20</button>
   </div>
-  
  </template>
 
 <script setup>
 import { ref } from "vue";
 let input = ref("");
-
 </script>
 
 <style scoped>
@@ -45,4 +52,10 @@ input {
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
+.buttons {
+  width:50px;
+  height:50px;
+  text-align:center;
+  
+}
 </style>
