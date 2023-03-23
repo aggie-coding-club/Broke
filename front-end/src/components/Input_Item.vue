@@ -8,7 +8,7 @@
     <div class = "title"> 
         <h2>Current Location</h2>
     </div>
-    <input type="text" v-model="input" placeholder="Search..." />
+    <input type="text" v-model="input2" placeholder="Search..." />
 
     <div class = "title">
         <h2>Search Radius (miles)</h2>
@@ -48,14 +48,18 @@ input {
   font-size: 16px;
   border: none;
   border-radius: 10px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+  box-shadow: hsla(240, 30%, 28%, 0.251) 0px 2px 5px -1px,
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
 .buttons {
+  justify-content: center;
   width:50px;
   height:50px;
   text-align:center;
-  
+  margin-top: 32px;
+  margin-left: 58px;
+  box-shadow: #32325d40 0px 2px 5px -1px;
+ 
 }
 </style>
