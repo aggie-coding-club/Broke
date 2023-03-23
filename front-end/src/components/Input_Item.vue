@@ -1,10 +1,16 @@
 <template>
   <div>
-    <div class = "inputitem">
+    <div class = "title"> 
         <h2>Input Item</h2>
     </div>
     <input type="text" v-model="input" placeholder="Search..." />
+
+    <div class = "title"> 
+        <h2>Current Location</h2>
+    </div>
+    <input type="text" v-model="input" placeholder="Search..." />
   </div>
+  
  </template>
 
 <script setup>
@@ -18,7 +24,7 @@ let input = ref("");
   width: 200px;
 
 }
-.inputitem {
+.title {
     display: flex;
     color:rgb(0, 0, 0);
     justify-content:center;
@@ -38,6 +44,5 @@ input {
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
-
 
 </style>
