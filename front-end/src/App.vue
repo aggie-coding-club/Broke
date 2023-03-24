@@ -2,6 +2,7 @@
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
 import Logo from './components/logo.vue'
+import Description from './components/Description.vue'
 </script>
 
 <template>
@@ -9,6 +10,7 @@ import Logo from './components/logo.vue'
 
     <div class="wrapper">
       <Logo/>
+      <Description/>
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
