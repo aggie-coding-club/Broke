@@ -21,7 +21,8 @@ import HelloWorld from './components/HelloWorld.vue'
   <footer>
     <div>
       <h3>Contact us at brokeapp@gmail.com</h3>
-      <h3>Feedback </h3>
+      <h3>Feedback</h3>
+      <!--Add a link to a real feedback form and change to a real email for the app-->
     </div>
   </footer>
 </template>
