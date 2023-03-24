@@ -12,7 +12,8 @@ import time
 
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()) )
 driver.get("https://www.tamu.edu/")
-driver.set_window_size(1200, 900)
+
+driver.maximize_window()
 
 # print out the title of the page
 print(driver.title)

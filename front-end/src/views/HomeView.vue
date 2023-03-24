@@ -1,9 +1,9 @@
 <script setup>
-import TheWelcome from '../components/TheWelcome.vue'
+import Cate_btn from '../components/Cate_btn.vue'
 </script>
 
 <template>
   <main>
-    <TheWelcome />
+    <Cate_btn />
   </main>
 </template>
