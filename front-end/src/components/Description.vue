@@ -19,7 +19,8 @@
 .description{
     font-size: 12px;
     color: #000000;
-    height: 100px;
+    height: 500px;
+    padding-top: 100px;
 }
 
 </style>
