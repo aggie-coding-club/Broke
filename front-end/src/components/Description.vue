@@ -19,6 +19,7 @@
 .description{
     font-size: 12px;
     color: #000000;
+    height: 100px;
 }
 
 </style>
