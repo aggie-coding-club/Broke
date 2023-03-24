@@ -1,6 +1,7 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
+import Cate_Btn from './components/Cate_Btn.vue' // import category buttons
 </script>
 
 <template>
