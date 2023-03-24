@@ -2,15 +2,13 @@
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
 import Logo from './components/logo.vue'
-import Description from './components/Description.vue'
 </script>
 
 <template>
   <header>
 
     <div class="wrapper">
-      <Logo/>
-      <Description/>
+      <logo/>
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
