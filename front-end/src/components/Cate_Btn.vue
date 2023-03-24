@@ -34,13 +34,14 @@ export default {
         color: black;
         text-decoration: none;
         border: 2px solid transparent;
-        font-size: 25px;
-        padding: 20px 25px;
-        margin: 15px 0px;
+        font-size: 2vw;
+        padding: 3vh 2vw; 
+        margin: 2vh 0px;
         border-radius: 15px;
-        width: 250px;
+        left: 9vw;
+        width: 20vw;
         transition: .4s;
-    }
+    } 
     .cate_btn:hover{
         transform: scale(1.1);
     }
