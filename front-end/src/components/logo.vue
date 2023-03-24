@@ -20,7 +20,7 @@
     border-radius: 50%;
     height: 19vh;
     width: 12vw;
-    margin: 0 auto;
+    /*margin: 0 auto;*/
 }
 .broke-text{
     height: 8vh;

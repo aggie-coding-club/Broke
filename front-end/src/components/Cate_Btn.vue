@@ -17,12 +17,14 @@ export default {
 }
 </script>
 <template>
-    <ul>
-        <li><button @click="grocery_page" class="cate_btn">Grocery</button></li>
-        <li><button @click="dinning_page" class="cate_btn">Dinning</button></li>
-        <li><button @click="drinks_page" class="cate_btn">Drinks</button></li>
-        <li><button @click="gas_page" class="cate_btn">Gas</button></li>
-    </ul>  
+    <div class = "buttons">
+        <ul>
+            <li><button @click="grocery_page" class="cate_btn">Grocery</button></li>
+            <li><button @click="dinning_page" class="cate_btn">Dining</button></li>
+            <li><button @click="drinks_page" class="cate_btn">Drinks</button></li>
+            <li><button @click="gas_page" class="cate_btn">Gas</button></li>
+        </ul>  
+    </div>
 </template>
 
 <style>
@@ -45,4 +47,9 @@ export default {
     .cate_btn:hover{
         transform: scale(1.1);
     }
+    .buttons{
+        min-height: 80vh;
+        padding-top: 10vh;
+    }
+
 </style>
