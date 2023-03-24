@@ -6,11 +6,9 @@ import Logo from './components/logo.vue'
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
       <Logo/>
-      <HelloWorld msg="You did it :>" />
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
@@ -23,7 +21,7 @@ import Logo from './components/logo.vue'
 
 <style scoped>
 header {
-  line-height: 1.5;
+  line-height: 1;
   max-height: 100vh;
 }
 
@@ -60,7 +58,7 @@ nav a:first-of-type {
 @media (min-width: 1024px) {
   header {
     display: flex;
-    place-items: center;
+    place-items: top;
     padding-right: calc(var(--section-gap) / 2);
   }
 
