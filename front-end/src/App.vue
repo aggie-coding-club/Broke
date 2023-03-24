@@ -8,7 +8,7 @@ import Logo from './components/logo.vue'
   <header>
 
     <div class="wrapper">
-      <logo/>
+      <Logo/>
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
