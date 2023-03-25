@@ -19,8 +19,8 @@
 .description{
     font-size: 12px;
     color: #000000;
-    height: 100px;
-    padding-top: 240px;
+    height: 60vh;
+    border: 2px solid green;
 }
 
 </style>
