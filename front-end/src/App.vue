@@ -1,6 +1,7 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
+import Footer from './components/Footer.vue'
 import Logo from './components/logo.vue'
 </script>
 
@@ -8,6 +9,7 @@ import Logo from './components/logo.vue'
   <header>
 
     <div class="wrapper">
+      <HelloWorld msg="You did it!" />
       <Logo/>
       <nav>
         <RouterLink to="/">Home</RouterLink>
@@ -17,7 +19,10 @@ import Logo from './components/logo.vue'
   </header>
 
   <RouterView />
+
+  <Footer></Footer>
 </template>
+
 
 <style scoped>
 header {
@@ -79,6 +84,10 @@ nav a:first-of-type {
 
     padding: 1rem 0;
     margin-top: 1rem;
+  }
+  
+  footer {
+    text-align: center;
   }
 }
 </style>
