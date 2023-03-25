@@ -9,10 +9,12 @@ import Logo from './components/logo.vue'
 
     <div class="wrapper">
       <Logo/>
+      <!--
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
       </nav>
+      -->
     </div>
   </header>
 
