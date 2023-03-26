@@ -48,12 +48,5 @@ export default {
     .cate_btn:hover{
         transform: scale(1.1);
     }
-    .buttons{ 
-        /*min-height: 80vh;
-        padding-top: 10vh;
-       
-        display: flex;
-        align-items: center;*/
-    }
 
 </style>
