@@ -14,7 +14,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    left: -76vw;
+    left: -77.5vw;
     top: -10vh;
     
 }
