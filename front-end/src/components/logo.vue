@@ -1,7 +1,7 @@
 <template>
     <div class="logo-wrapper">
         <img src="@/assets/broke-logo.png" alt="logo" class="logo-picture">
-        <div class="broke-text">
+        <div class="logo-text">
             <h2>Budget Guard</h2>
         </div>
     </div>
@@ -14,7 +14,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid blue;
+    left: -76vw;
+    top: -10vh;
+    
 }
 
 .logo-picture{
@@ -23,7 +25,7 @@
     width: 12vw;
     /*margin: 0 auto;*/
 }
-.broke-text{
+.logo-text{
     height: 8vh;
     width: 20vw;
     left: 1vw;
@@ -33,5 +35,7 @@
     font-size: 3vw;
     color: #000000;
 }
-
+.logo{
+    display: absolute;
+}
 </style>

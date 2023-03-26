@@ -16,6 +16,8 @@ div.footer-wrapper{
     position: absolute;
     height: 6vh;
     width: 90vw;
+    top: 40px;
+    left: -40px;
 }
 div.footer{
     position: relative;

@@ -40,16 +40,20 @@ export default {
         padding: 3vh 2vw; 
         margin: 2vh 0px;
         border-radius: 15px;
-        left: 9vw;
+        /*left: 9vw;*/
         width: 20vw;
         transition: .4s;
+        right: 20px;
     } 
     .cate_btn:hover{
         transform: scale(1.1);
     }
-    .buttons{
-        min-height: 80vh;
+    .buttons{ 
+        /*min-height: 80vh;
         padding-top: 10vh;
+       
+        display: flex;
+        align-items: center;*/
     }
 
 </style>

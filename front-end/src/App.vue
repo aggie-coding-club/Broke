@@ -5,30 +5,44 @@ import Logo from './components/logo.vue'
 </script>
 
 <template>
+  
+  <div>
+    <RouterView />
+  </div>
+  
   <header>
-
+    <!--
     <div class="wrapper">
+    -->
       <Logo/>
+      
       <!--
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
       </nav>
       -->
+    <!--
     </div>
+    -->
+   
   </header>
+  
 
-  <RouterView />
 
   <Footer></Footer>
 </template>
 
 
+
 <style scoped>
+
 header {
   line-height: 1;
   max-height: 100vh;
+  color: blue;
 }
+
 
 .logo {
   display: block;
@@ -60,9 +74,10 @@ nav a:first-of-type {
   border: 0;
 }
 
+
 @media (min-width: 1024px) {
   header {
-    display: flex;
+    /*display: flex;*/
     place-items: top;
     padding-right: calc(var(--section-gap) / 2);
   }
@@ -70,13 +85,13 @@ nav a:first-of-type {
   .logo {
     margin: 0 2rem 0 0;
   }
-
+  
   header .wrapper {
     display: flex;
     place-items: flex-start;
     flex-wrap: wrap;
   }
-
+  
   nav {
     text-align: left;
     margin-left: -1rem;
