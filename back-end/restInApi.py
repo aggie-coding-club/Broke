@@ -1,14 +1,17 @@
 from flask import Flask
 from flask import request
 
+from demoScraper import demo
+
 app = Flask(__name__)
 
-@app.route('/grocerytest', methods=['GET', 'POST'])
+@app.route('/restdemo', methods=['GET', 'POST'])
 def grocery_test():
     if request.method == 'GET':
-        return {
-            'hello': 'world! (GET request)'
-        }
+        result = demo()
+        if result != None:
+            return result
+        return {'idk': 'idk'}
     elif request.method == 'POST':
         return {
             'hello': 'world! (POST request)'
