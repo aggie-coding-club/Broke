@@ -1,3 +1,12 @@
+export default {
+  data() {
+    return {
+      isActive: false,
+    };
+  },
+};
+
+
 <template>
   <div>
     <div class = "title"> 
@@ -13,11 +22,11 @@
     <div class = "title">
         <h2>Search Radius (miles)</h2>
     </div>
-    <button class ="buttons">1</button>
-    <button class ="buttons">5</button>
-    <button class ="buttons">10</button>
-    <button class ="buttons">15</button>
-    <button class ="buttons">20</button>
+    <button class ="buttons" @click="toggle">1</button>
+    <button class ="buttons" @click="toggle">5</button>
+    <button class ="buttons" @click="toggle">10</button>
+    <button class ="buttons" @click="toggle">15</button>
+    <button class ="buttons" @click="toggle">20</button>
   </div>
  </template>
 
@@ -61,5 +70,12 @@ input {
   margin-left: 58px;
   box-shadow: #32325d40 0px 2px 5px -1px;
  
+}
+.buttons:hover{
+  transform: scale(1.1);
+}
+
+.buttons:checked{
+  transform: scale(1.8);
 }
 </style>
