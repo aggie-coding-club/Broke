@@ -31,7 +31,7 @@ export default {
     <div>
     <label>Display open stores only </label>
     <input type ="checkbox" value="Display open stores only" id="Display open stores only">
-
+    <button class="pill">Search</button>
     </div>
   </div>
  </template>
@@ -86,7 +86,15 @@ input.text {
 .buttons:checked{
   transform: scale(1.8);
 }
-
+.pill {
+  border-radius: 15px;
+  padding: 8px 8px;
+  margin-left: 30px;
+  box-shadow: #32325d40 0px 2px 5px -1px;
+}
+.pill:hover{
+  transform: scale(1.1);
+}
 
 </style>
 
