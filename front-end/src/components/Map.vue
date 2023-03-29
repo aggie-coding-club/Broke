@@ -1,16 +1,18 @@
 <template>
     <div class="map-wrapper">
-        <h2>Map Placeholder</h2>
+        <img src="@/assets/map.png" alt="placeholder image for map" class="map-img">
     </div>
 </template>
 
 <style>
 .map-wrapper {
-    padding: 240px 290px;
-    background-color: #E7E2D7;
-    border-radius: 5%;
+    width: 590px;
+    height: 540px;
 }
-h2 {
-    color: #000000;
+.map-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5%;
 }
 </style>
