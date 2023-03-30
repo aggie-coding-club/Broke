@@ -2,5 +2,7 @@
 import Map from "../components/Map.vue";
 </script>
 <template>
-  <Map></Map>
+  <main>
+    <Map></Map>
+  </main>
 </template>
