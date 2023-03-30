@@ -10,8 +10,9 @@
 
 <style>
 .map-wrapper {
-  width: 590px;
-  height: 540px;
+  width: 490px;
+  height: 450px;
+  border: 2px solid red;
 }
 
 .map-img {
