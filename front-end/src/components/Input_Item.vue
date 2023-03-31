@@ -54,7 +54,7 @@ input {
   display: block;
   width: 42vw; /*600px*/
   height: 6vh;
-  margin: 40px auto;
+  margin: 20px auto;
   padding: 10px 45px;
   background: rgb(244, 244, 244) url("@/assets/search-icon.svg") no-repeat 20px center;
   background-size: 15px 15px;

@@ -29,7 +29,7 @@ import Description from '../components/Description.vue'
   /*right: -10vw;
   bottom: -25vh;*/
   left: 10vw;
-  top: 10vw;
+  top: 8vw;
 }
 </style>
 

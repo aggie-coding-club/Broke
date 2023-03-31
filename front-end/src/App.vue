@@ -28,7 +28,6 @@ import Logo from "./components/logo.vue";
 
   <Footer></Footer>
 
-  <RouterLink to="/result">Result View Test</RouterLink>
 </template>
 
 <style scoped>

@@ -16,7 +16,7 @@ import Input_Item from '../components/Input_Item.vue'
   justify-content: center;
   /*top: -27vh;
   left: -5vw;*/
-  right: 7vw;
+  right: 5vw;
   top: 25vh;
 }
 </style>
