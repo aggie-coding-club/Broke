@@ -28,13 +28,17 @@ export default {
     <button class ="buttons" @click="toggle">10</button>
     <button class ="buttons" @click="toggle">15</button>
     <button class ="buttons" @click="toggle">20</button>
-    
-    <div>
-    <label>Display open stores only </label>
-    <input type ="checkbox" value="Display open stores only" id="Display open stores only">
-    <button class="pill">Search</button>
+     </div>
+     <div class = "bottom-user">
+      <div class = "open-store">
+        <label class = "open-store-label">Display open stores only </label>
+        <input type ="checkbox" value="Display open stores only" id="Display open stores only" class = "checkbox">
+      </div>
+      <button class="pill">Search</button>
     </div>
+    
   </div>
+ 
  </template>
 
 <script setup>
@@ -71,6 +75,13 @@ input.text {
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
+input.checkbox{
+  width: 3vh;
+  height: 3vh;
+  vertical-align: middle;
+  left: 0.5vw;
+}
+
 .buttons {
   justify-content: center;
   width:4vw; /*50px*/
@@ -91,13 +102,28 @@ input.text {
 
 .pill {
   border-radius: 15px;
-  padding: 8px 8px;
-  margin-left: 30px;
+  padding: 2vh 2vw;
   box-shadow: #32325d40 0px 2px 5px -1px;
+  left: 17vw;
+  
 }
 .pill:hover{
   transform: scale(1.1);
 }
+.open-store{
+  left: 15vw;
+  width: 20vw;
+  top: 1vh;
+}
+.open-store-label{
+  font-size: 18px;
+}
 
+.bottom-user{
+  display: flex;
+  width: 44vw;
+  left: 3vw;
+  top: 5vh;
+}
 </style>
 
