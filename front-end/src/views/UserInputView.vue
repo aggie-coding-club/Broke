@@ -10,11 +10,13 @@ import Input_Item from '../components/Input_Item.vue'
 
 <style>
 .input-page{
-  position: absolute;
+  position: fixed;
   width: 50vw;
   height: 80vh;
   justify-content: center;
-  top: -27vh;
-  left: -5vw;
+  /*top: -27vh;
+  left: -5vw;*/
+  right: 7vw;
+  top: 25vh;
 }
 </style>

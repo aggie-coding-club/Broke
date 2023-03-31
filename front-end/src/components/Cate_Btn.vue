@@ -21,7 +21,7 @@ export default {
         <ul>
             <!--<router-link to="/userinput" custom v-slot="{ navigate }">-->
             <a href = "/userinput">
-            <li><button @click="navigate" role = "link" class="cate_btn">Grocery</button></li>
+            <li><button @click="grocery_page" role = "link" class="cate_btn">Grocery</button></li>
             <li><button @click="dinning_page" class="cate_btn">Dining</button></li>
             <li><button @click="drinks_page" class="cate_btn">Drinks</button></li>
             <li><button @click="gas_page" class="cate_btn">Gas</button></li>
