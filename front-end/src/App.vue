@@ -1,20 +1,17 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import Footer from './components/Footer.vue'
-import Logo from './components/logo.vue'
+import { RouterLink, RouterView } from "vue-router";
+import Footer from "./components/Footer.vue";
+import Logo from "./components/logo.vue";
 </script>
 
 <template>
-  
-  
-  
   <header>
     <!--
     <div class="wrapper">
     -->
-      <Logo/>
-      
-      <!--
+    <Logo />
+
+    <!--
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
@@ -23,20 +20,18 @@ import Logo from './components/logo.vue'
     <!--
     </div>
     -->
-   
   </header>
-  
+ 
   <div>
     <RouterView />
   </div>
 
   <Footer></Footer>
+
+  <RouterLink to="/result">Result View Test</RouterLink>
 </template>
 
-
-
 <style scoped>
-
 
 header {
   line-height: 1;
@@ -45,7 +40,6 @@ header {
   height: 20vh;
   
 }
-
 
 .logo {
   display: block;
@@ -77,7 +71,6 @@ nav a:first-of-type {
   border: 0;
 }
 
-
 @media (min-width: 1024px) {
   /*
   header {
@@ -89,6 +82,7 @@ nav a:first-of-type {
   .logo {
     margin: 0 2rem 0 0;
   }
+
   /*
   header .wrapper {
     display: flex;
@@ -104,7 +98,7 @@ nav a:first-of-type {
     padding: 1rem 0;
     margin-top: 1rem;
   }
-  
+
   footer {
     text-align: center;
   }
