@@ -12,12 +12,12 @@ export default {
     <div class = "title"> 
         <h2>Input Item</h2>
     </div>
-    <input type="text" v-model="input" placeholder="Search..." />
+    <input class ="text" type="text" v-model="input" placeholder="Search..." />
 
     <div class = "title"> 
         <h2>Current Location</h2>
     </div>
-    <input type="text" v-model="input2" placeholder="Search..." />
+    <input class ="text" type="text" v-model="input2" placeholder="Search..." />
 
     <div class = "title">
         <h2>Search Radius (miles)</h2>
@@ -28,6 +28,11 @@ export default {
     <button class ="buttons" @click="toggle">10</button>
     <button class ="buttons" @click="toggle">15</button>
     <button class ="buttons" @click="toggle">20</button>
+    
+    <div>
+    <label>Display open stores only </label>
+    <input type ="checkbox" value="Display open stores only" id="Display open stores only">
+    <button class="pill">Search</button>
     </div>
   </div>
  </template>
@@ -50,7 +55,8 @@ let input = ref("");
     font-size: 19px;
     top: 10px;
 }
-input {
+
+input.text {
   display: block;
   width: 42vw; /*600px*/
   height: 6vh;
@@ -83,5 +89,15 @@ input {
   justify-content: center;
 }
 
+.pill {
+  border-radius: 15px;
+  padding: 8px 8px;
+  margin-left: 30px;
+  box-shadow: #32325d40 0px 2px 5px -1px;
+}
+.pill:hover{
+  transform: scale(1.1);
+}
 
 </style>
+
