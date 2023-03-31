@@ -32,8 +32,8 @@ export default {
         list-style-type: none;
     }
     .cate_btn{
-        background-color: #c1b599;
-        color: black;
+        background-color: #ece8e0;
+        color: #808784;
         text-decoration: none;
         border: 2px solid transparent;
         font-size: 2vw;
@@ -43,10 +43,12 @@ export default {
         /*left: 9vw;*/
         width: 20vw;
         transition: .4s;
-        right: 20px;
+        right: 0px;
+        top: 60px;
     } 
     .cate_btn:hover{
         transform: scale(1.1);
+        color: black;
     }
 
 </style>

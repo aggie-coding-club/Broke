@@ -45,16 +45,19 @@ let input = ref("");
     color:rgb(0, 0, 0);
     justify-content:center;
     text-align: center;
-
+    font-size: 20px;
+    padding-top: 20px;
+    top: 10px;
 }
 input {
   display: block;
-  width: 500px;
-  margin: 20px auto;
+  width: 43vw; /*600px*/
+  height: 7vh;
+  margin: 40px auto;
   padding: 10px 45px;
   background: rgb(244, 244, 244) url("@/assets/search-icon.svg") no-repeat 20px center;
   background-size: 15px 15px;
-  font-size: 16px;
+  font-size: 20px;
   border: none;
   border-radius: 10px;
   box-shadow: hsla(240, 30%, 28%, 0.251) 0px 2px 5px -1px,
@@ -63,8 +66,8 @@ input {
 
 .buttons {
   justify-content: center;
-  width:50px;
-  height:50px;
+  width:5vw; /*50px*/
+  height:8vh;
   text-align:center;
   margin-top: 32px;
   margin-left: 58px;
@@ -75,7 +78,6 @@ input {
   transform: scale(1.1);
 }
 
-.buttons:checked{
-  transform: scale(1.8);
-}
+
+
 </style>

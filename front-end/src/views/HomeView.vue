@@ -25,7 +25,9 @@ import Description from '../components/Description.vue'
 .home-view{
   height: 70vh;
   width: 80vw;
-  left: 30px;
+  position: absolute;
+  right: -10vw;
+  bottom: -25vh;
 }
 </style>
 

@@ -6,9 +6,7 @@ import Logo from './components/logo.vue'
 
 <template>
   
-  <div>
-    <RouterView />
-  </div>
+  
   
   <header>
     <!--
@@ -28,7 +26,9 @@ import Logo from './components/logo.vue'
    
   </header>
   
-
+  <div>
+    <RouterView />
+  </div>
 
   <Footer></Footer>
 </template>
@@ -37,10 +37,13 @@ import Logo from './components/logo.vue'
 
 <style scoped>
 
+
 header {
   line-height: 1;
   max-height: 100vh;
-  color: blue;
+  width: 30vw;
+  height: 20vh;
+  
 }
 
 
@@ -76,21 +79,22 @@ nav a:first-of-type {
 
 
 @media (min-width: 1024px) {
+  /*
   header {
-    /*display: flex;*/
+    display: flex;
     place-items: top;
     padding-right: calc(var(--section-gap) / 2);
-  }
+  }*/
 
   .logo {
     margin: 0 2rem 0 0;
   }
-  
+  /*
   header .wrapper {
     display: flex;
     place-items: flex-start;
     flex-wrap: wrap;
-  }
+  }*/
   
   nav {
     text-align: left;
