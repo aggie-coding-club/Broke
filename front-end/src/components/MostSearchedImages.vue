@@ -8,12 +8,6 @@ export default {
       item4: 'Doritos',
       item5: 'Brownie Mix',
       item6: 'Milk',
-      image1: '@/assets/honeyimg.jpeg'
-    }
-  },
-  methods: {
-    searchItem(){
-        console.log(item1);
     }
   }
 }
