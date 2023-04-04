@@ -40,7 +40,7 @@ export default {
         list-style-type: none;
     }
     .cate_btn{
-        background-color: #f3f2e9/*#dcf7f9 #f0fbff*/;
+        background-color: rgb(244, 244, 244)/*#dcf7f9 #f0fbff*/;
         color: #808784;
         text-decoration: none;
         font-size: 2vw;
