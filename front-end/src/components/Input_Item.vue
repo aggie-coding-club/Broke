@@ -34,7 +34,9 @@ export default {
         <label class = "open-store-label">Display open stores only </label>
         <input type ="checkbox" value="Display open stores only" id="Display open stores only" class = "checkbox">
       </div>
-      <button class="pill">Search</button>
+      <router-link to="/result" custom v-slot="{ navigate }">
+        <button class="pill" @click="navigate">Search</button>
+      </router-link>
     </div>
     
   </div>
@@ -91,6 +93,8 @@ input.checkbox{
   margin-left: auto;
   margin-right: auto;
   box-shadow: #32325d40 0px 2px 5px -1px;
+  background: rgb(244, 244, 244);
+  border: 1px solid black;
 }
 .buttons:hover{
   transform: scale(1.1);
@@ -105,7 +109,9 @@ input.checkbox{
   padding: 2vh 2vw;
   box-shadow: #32325d40 0px 2px 5px -1px;
   left: 17vw;
-  
+  background: rgb(244, 244, 244);
+  border: 1px solid black;
+  font-size: 18px;
 }
 .pill:hover{
   transform: scale(1.1);

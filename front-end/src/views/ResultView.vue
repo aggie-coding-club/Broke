@@ -3,18 +3,25 @@ import Map from "../components/Map.vue";
 import Nav from '../components/Nav.vue'
 </script>
 <template>
-  <nav>
-    <Nav />
-  </nav>
-  <main class = "result-view">
+  <div class = "result-view">
+  <div class = "map-view">
     <Map></Map>
-  </main>
+  </div>
+</template>
 </template>
 
 <style>
 .result-view{
   position:fixed;
+  width: 100vw;
+  height: 100vh;
+  left: 0px;
+  top: 0px;
+  background-color: #f2fdfe;
+}
+.map-view{
+  position: fixed;
   top: 30vh;
-  left: 12vw;
+  left: 11vw;
 }
 </style>
