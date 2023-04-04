@@ -1,5 +1,5 @@
-def valero(input: str) -> list:
+def gasScrape(type_of_gas : str, radius : int, address : str) -> dict: 
     '''
-    For gas stations, the input string is simply ether 'diesel' or 'regular'
+    take 2 parameters, type_of_gas specifiying regular or diesel, and radius
     '''
-    print('This is a ' + input + '!')
+    pass
