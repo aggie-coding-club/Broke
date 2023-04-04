@@ -5,27 +5,14 @@ import Logo from "./components/logo.vue";
 </script>
 
 <template>
-  <header>
-    <!--
-    <div class="wrapper">
-    -->
-    <Logo />
-
-    <!--
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-      -->
-    <!--
-    </div>
-    -->
-  </header>
+ 
  
   <div>
     <RouterView />
   </div>
-
+  <header>
+    <Logo />
+  </header>
   <Footer></Footer>
 
 </template>

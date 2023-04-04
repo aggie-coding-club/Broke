@@ -14,11 +14,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    /*left: 6vw;
-    bottom: 58vh;
-   left: -77.5vw;
-    top: -10vh;*/
-    right: 8vw;
+    /*right: 8vw;*/
+    right: 38vw;
     bottom: 35vh;
     
     position: absolute;

@@ -21,15 +21,18 @@ import Description from '../components/Description.vue'
   display: inline-block;
   padding: 1rem 1rem;
   vertical-align: middle;
+  left: 10vw;
+  top: 8vw;
 }
 .home-view{
-  height: 70vh;
-  width: 80vw;
+  height: 100vh;
+  width: 100vw;
   position: fixed; /*changed from absolute to fixed*/
   /*right: -10vw;
   bottom: -25vh;*/
-  left: 10vw;
-  top: 8vw;
+  left: 0vw;
+  top: 0vw;
+  background-color: #f2fdfe;
 }
 </style>
 
