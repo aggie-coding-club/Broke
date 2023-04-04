@@ -1,13 +1,12 @@
 <script setup>
 import Map from "../components/Map.vue";
-import Nav from '../components/Nav.vue'
 </script>
 <template>
   <div class = "result-view">
   <div class = "map-view">
     <Map></Map>
   </div>
-</template>
+</div>
 </template>
 
 <style>
