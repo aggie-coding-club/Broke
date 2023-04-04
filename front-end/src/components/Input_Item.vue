@@ -93,6 +93,8 @@ input.checkbox{
   margin-left: auto;
   margin-right: auto;
   box-shadow: #32325d40 0px 2px 5px -1px;
+  background: rgb(244, 244, 244);
+  border: 1px solid black;
 }
 .buttons:hover{
   transform: scale(1.1);
@@ -107,6 +109,9 @@ input.checkbox{
   padding: 2vh 2vw;
   box-shadow: #32325d40 0px 2px 5px -1px;
   left: 17vw;
+  background: rgb(244, 244, 244);
+  border: 1px solid black;
+  font-size: 18px;
 }
 .pill:hover{
   transform: scale(1.1);
