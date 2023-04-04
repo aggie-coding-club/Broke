@@ -1,7 +1,11 @@
 <script setup>
 import Map from "../components/Map.vue";
+import Nav from '../components/Nav.vue'
 </script>
 <template>
+  <nav>
+    <Nav />
+  </nav>
   <main class = "result-view">
     <Map></Map>
   </main>

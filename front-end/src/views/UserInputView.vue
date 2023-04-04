@@ -1,9 +1,14 @@
 <script setup>
 import Input_Item from '../components/Input_Item.vue'
+import Nav from '../components/Nav.vue'
 </script>
 
 <template>
+   <nav>
+      <Nav />
+   </nav>
   <main class = "input-page">
+     
     <Input_Item />
   </main>
 </template>
