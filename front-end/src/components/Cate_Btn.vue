@@ -19,10 +19,18 @@ export default {
 <template>
     <div class = "buttons">
         <ul>
-            <li><button @click="grocery_page" class="cate_btn">Grocery</button></li>
+            <router-link to="/userinput" custom v-slot="{ navigate }">
+            <!--
+            <li><button @click="grocery_page" role = "link" class="cate_btn">Grocery</button></li>
             <li><button @click="dinning_page" class="cate_btn">Dining</button></li>
             <li><button @click="drinks_page" class="cate_btn">Drinks</button></li>
             <li><button @click="gas_page" class="cate_btn">Gas</button></li>
+            -->
+            <li><button @click="navigate" class="cate_btn">Grocery</button></li>
+            <li><button @click="navigate" class="cate_btn">Dining</button></li>
+            <li><button @click="navigate" class="cate_btn">Drinks</button></li>
+            <li><button @click="navigate" class="cate_btn">Gas</button></li>
+            </router-link>
         </ul>  
     </div>
 </template>
@@ -32,24 +40,23 @@ export default {
         list-style-type: none;
     }
     .cate_btn{
-        background-color: #c1b599;
-        color: black;
+        background-color: #f3f2e9/*#dcf7f9 #f0fbff*/;
+        color: #808784;
         text-decoration: none;
-        border: 2px solid transparent;
         font-size: 2vw;
         padding: 3vh 2vw; 
         margin: 2vh 0px;
         border-radius: 15px;
-        left: 9vw;
+        /*left: 9vw;*/
         width: 20vw;
         transition: .4s;
+        right: 0px;
+        top: 60px;
+        border: 1px solid black;
     } 
     .cate_btn:hover{
         transform: scale(1.1);
-    }
-    .buttons{
-        min-height: 80vh;
-        padding-top: 10vh;
+        color: black;
     }
 
 </style>

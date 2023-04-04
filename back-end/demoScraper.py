@@ -30,14 +30,17 @@ def demo():
         )
         link.click()
 
-        element = driver.find_element(By.ID, "ctl00_ContentPlaceHolder1__editor__pageContent")
+        element = WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.ID, "ctl00_ContentPlaceHolder1__editor__pageContent"))
+        )
+        #element = driver.find_element(By.ID, "ctl00_ContentPlaceHolder1__editor__pageContent")
 
         paragraphs = element.find_elements(By.TAG_NAME, 'p')
         
         info = dict()
 
         for idx, p in enumerate(paragraphs[:5]):
-            info[idx] = p.text
+            info[idx] = p.text.strip()
         
         driver.quit()
 
