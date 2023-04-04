@@ -2,3 +2,4 @@ Flask==2.2.3
 selenium==4.8.2
 webdriver-manager==3.8.5
 geopy==2.3.0
+Flask-Cors==3.0.10

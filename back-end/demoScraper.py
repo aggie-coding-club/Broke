@@ -9,7 +9,9 @@ from selenium.webdriver.support import expected_conditions as EC
 import time
 
 def demo():
-    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()) )
+    options = webdriver.ChromeOptions()
+    options.add_argument("--headless=new")
+    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
     driver.get("https://www.tamu.edu/")
 
     driver.maximize_window()
