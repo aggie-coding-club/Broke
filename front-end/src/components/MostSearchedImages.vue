@@ -76,7 +76,7 @@ export default {
     flex-wrap: wrap;
   	height: 365px;
   	width: 500px;
-    margin-right: 0;
+    margin-left: 0px;
     margin-top: 32px;
 }
 
