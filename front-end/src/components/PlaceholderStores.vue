@@ -5,9 +5,15 @@
        	<div class="storeName">HEB</div>
         <div class="price">$19.99</div>
     </div>
-    <div class="dist">2.5 mi</div>
-    <div class="address">123 Main St. College Station, TX</div>
-    <div class="hours">6AM - 6PM</div>
+    <div class="flexbox">
+      <div class = "store-details">
+        <div class="dist">2.5 mi</div>
+        <div class="address">123 Main St. College Station, TX</div>
+        <div class="hours">6AM - 6PM</div>
+      </div>
+      <div class="item-name">HEB Select Ingredients Tomato Sauce 8oz</div>
+    </div>
+    
   </div>
   <br>
 
@@ -16,9 +22,14 @@
        	<div class="storeName">Costco</div>
         <div class="price">$19.99</div>
     </div>
-    <div class="dist">2.5 mi</div>
-    <div class="address">123 Main St. College Station, TX</div>
-    <div class="hours">6AM - 6PM</div>
+    <div class="flexbox">
+      <div class = "store-details">
+        <div class="dist">2.5 mi</div>
+        <div class="address">123 Main St. College Station, TX</div>
+        <div class="hours">6AM - 6PM</div>
+      </div>
+      <div class="item-name">Costco Select Ingredients Tomato Sauce 8oz</div>
+    </div>
   </div>
   <br>
 
@@ -27,9 +38,14 @@
        	<div class="storeName">Walmart</div>
         <div class="price">$19.99</div>
     </div>
-    <div class="dist">2.5 mi</div>
-    <div class="address">123 Main St. College Station, TX</div>
-    <div class="hours">6AM - 6PM</div>
+    <div class="flexbox">
+      <div class = "store-details">
+        <div class="dist">2.5 mi</div>
+        <div class="address">123 Main St. College Station, TX</div>
+        <div class="hours">6AM - 6PM</div>
+      </div>
+      <div class="item-name">Walmart Select Ingredients Tomato Sauce 8oz</div>
+    </div>
   </div>  
   <br>
 
@@ -38,9 +54,14 @@
        	<div class="storeName">Really Long Name Here</div>
         <div class="price">$19.99</div>
     </div>
-    <div class="dist">2.5 mi</div>
-    <div class="address">123 Main St. College Station, TX</div>
-    <div class="hours">6AM - 6PM</div>
+    <div class="flexbox">
+      <div class = "store-details">
+        <div class="dist">2.5 mi</div>
+        <div class="address">123 Main St. College Station, TX</div>
+        <div class="hours">6AM - 6PM</div>
+      </div>
+      <div class="item-name">XXX Select Ingredients Tomato Sauce 8oz</div>
+    </div>
   </div>
   <br>
 
@@ -49,9 +70,14 @@
        	<div class="storeName">Brookshire Brothers Express (Add on for length)</div>
         <div class="price">$19.99</div>
     </div>
-    <div class="dist">2.5 mi</div>
-    <div class="address">123 Main St. College Station, TX</div>
-    <div class="hours">6AM - 6PM</div>
+    <div class="flexbox">
+      <div class = "store-details">
+        <div class="dist">2.5 mi</div>
+        <div class="address">123 Main St. College Station, TX</div>
+        <div class="hours">6AM - 6PM</div>
+      </div>
+      <div class="item-name">Brookshire Brothers Select Ingredients Tomato Sauce 8oz</div>
+    </div>
   </div>
   <br>
 
@@ -60,9 +86,14 @@
        	<div class="storeName">Brookshire Brothers Express (Add on for length)</div>
         <div class="price">$19.99</div>
     </div>
-    <div class="dist">2.5 mi</div>
-    <div class="address">123 Main St. College Station, TX</div>
-    <div class="hours">6AM - 6PM</div>
+    <div class="flexbox">
+      <div class = "store-details">
+        <div class="dist">2.5 mi</div>
+        <div class="address">123 Main St. College Station, TX</div>
+        <div class="hours">6AM - 6PM</div>
+      </div>
+      <div class="item-name">Brookshire Brothers Select Ingredients Tomato Sauce 8oz</div>
+    </div>
   </div>
   <br>
 
@@ -71,9 +102,14 @@
        	<div class="storeName">Brookshire Brothers Express (Add on for length)</div>
         <div class="price">$19.99</div>
     </div>
-    <div class="dist">2.5 mi</div>
-    <div class="address">123 Main St. College Station, TX</div>
-    <div class="hours">6AM - 6PM</div>
+    <div class="flexbox">
+      <div class = "store-details">
+        <div class="dist">2.5 mi</div>
+        <div class="address">123 Main St. College Station, TX</div>
+        <div class="hours">6AM - 6PM</div>
+      </div>
+      <div class="item-name">Brookshire Brothers Select Ingredients Tomato Sauce 8oz</div>
+    </div>
   </div>
   <br>
 
@@ -82,9 +118,14 @@
        	<div class="storeName">Brookshire Brothers Express (Add on for length)</div>
         <div class="price">$19.99</div>
     </div>
-    <div class="dist">2.5 mi</div>
-    <div class="address">123 Main St. College Station, TX</div>
-    <div class="hours">6AM - 6PM</div>
+    <div class="flexbox">
+      <div class = "store-details">
+        <div class="dist">2.5 mi</div>
+        <div class="address">123 Main St. College Station, TX</div>
+        <div class="hours">6AM - 6PM</div>
+      </div>
+      <div class="item-name">Brookshire Brothers Select Ingredients Tomato Sauce 8oz</div>
+    </div>
   </div>
   <br>
 
@@ -93,9 +134,14 @@
        	<div class="storeName">Brookshire Brothers Express (Add on for length)</div>
         <div class="price">$19.99</div>
     </div>
-    <div class="dist">2.5 mi</div>
-    <div class="address">123 Main St. College Station, TX</div>
-    <div class="hours">6AM - 6PM</div>
+    <div class="flexbox">
+      <div class = "store-details">
+        <div class="dist">2.5 mi</div>
+        <div class="address">123 Main St. College Station, TX</div>
+        <div class="hours">6AM - 6PM</div>
+      </div>
+      <div class="item-name">Brookshire Brothers Select Ingredients Tomato Sauce 8oz</div>
+    </div>
   </div>
   <br>
 
@@ -104,9 +150,14 @@
        	<div class="storeName">Brookshire Brothers Express (Add on for length)</div>
         <div class="price">$19.99</div>
     </div>
-    <div class="dist">2.5 mi</div>
-    <div class="address">123 Main St. College Station, TX</div>
-    <div class="hours">6AM - 6PM</div>
+    <div class="flexbox">
+      <div class = "store-details">
+        <div class="dist">2.5 mi</div>
+        <div class="address">123 Main St. College Station, TX</div>
+        <div class="hours">6AM - 6PM</div>
+      </div>
+      <div class="item-name">Brookshire Brothers Select Ingredients Tomato Sauce 8oz</div>
+    </div>
   </div>
 </div>  
 </template>
@@ -115,7 +166,7 @@
 
 <style>
 .resultBox {
-  width: 550px;
+  width: 40vw;
   height: 70vh;
   overflow-y: scroll;
 }
@@ -140,5 +191,10 @@
 .dist, .address, .hours {
   color: black;
   font-size: 1.3em;
+}
+.item-name{
+  overflow-wrap: break-word;
+  max-width: 15vw; 
+  text-align: right;
 }
 </style>
