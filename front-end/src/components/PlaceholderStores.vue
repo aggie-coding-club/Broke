@@ -9,6 +9,7 @@
     <div class="address">123 Main St. College Station, TX</div>
     <div class="hours">6AM - 6PM</div>
   </div>
+  <br>
 
   <div class="result">
     <div class="flexbox">
@@ -19,6 +20,7 @@
     <div class="address">123 Main St. College Station, TX</div>
     <div class="hours">6AM - 6PM</div>
   </div>
+  <br>
 
   <div class="result">
     <div class="flexbox">
@@ -29,6 +31,7 @@
     <div class="address">123 Main St. College Station, TX</div>
     <div class="hours">6AM - 6PM</div>
   </div>  
+  <br>
 
   <div class="result">
     <div class="flexbox">
@@ -39,6 +42,7 @@
     <div class="address">123 Main St. College Station, TX</div>
     <div class="hours">6AM - 6PM</div>
   </div>
+  <br>
 
   <div class="result">
     <div class="flexbox">
@@ -49,6 +53,7 @@
     <div class="address">123 Main St. College Station, TX</div>
     <div class="hours">6AM - 6PM</div>
   </div>
+  <br>
 
   <div class="result">
     <div class="flexbox">
@@ -59,6 +64,7 @@
     <div class="address">123 Main St. College Station, TX</div>
     <div class="hours">6AM - 6PM</div>
   </div>
+  <br>
 
   <div class="result">
     <div class="flexbox">
@@ -69,6 +75,7 @@
     <div class="address">123 Main St. College Station, TX</div>
     <div class="hours">6AM - 6PM</div>
   </div>
+  <br>
 
   <div class="result">
     <div class="flexbox">
@@ -79,6 +86,7 @@
     <div class="address">123 Main St. College Station, TX</div>
     <div class="hours">6AM - 6PM</div>
   </div>
+  <br>
 
   <div class="result">
     <div class="flexbox">
@@ -89,6 +97,7 @@
     <div class="address">123 Main St. College Station, TX</div>
     <div class="hours">6AM - 6PM</div>
   </div>
+  <br>
 
   <div class="result">
     <div class="flexbox">
