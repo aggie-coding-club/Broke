@@ -1,11 +1,15 @@
 <script setup>
 import Map from "../components/Map.vue";
+import PlaceholderStores from "../components/PlaceholderStores.vue";
 
 </script>
 <template>
   <div class = "result-view">
   <div class = "map-view">
     <Map></Map>
+  </div>
+  <div class = "stores-view">
+    <PlaceholderStores></PlaceholderStores>
   </div>
 </div>
 </template>
@@ -23,5 +27,10 @@ import Map from "../components/Map.vue";
   position: fixed;
   top: 30vh;
   left: 11vw;
+}
+.stores-view{
+  position: fixed;
+  right: 10vw;
+  top: 20vh;
 }
 </style>
