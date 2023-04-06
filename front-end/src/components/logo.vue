@@ -21,6 +21,7 @@
     left: 10vw;
     top: 5vh;
     position: fixed;
+    z-index: 1;
 }
 
 .logo-picture{

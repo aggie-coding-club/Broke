@@ -5,7 +5,7 @@
     <nav>
         <ul class="navbar">
             <a href="/">
-            <li><button>Home</button></li>
+            <li><button class = "navbar-button">Home</button></li>
             </a>
         </ul>
     </nav>
@@ -23,7 +23,7 @@
         height: 43px;
         border-radius: 7px;
     }
-    li button {
+    .navbar-button {
         background-color: white;
         display: inline;
         font-size: 16px;
