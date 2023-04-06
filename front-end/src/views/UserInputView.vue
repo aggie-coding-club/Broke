@@ -1,7 +1,6 @@
 <script setup>
 import Input_Item from '../components/Input_Item.vue'
 import Searched_images from '../components/MostSearchedImages.vue'
-import Nav from '../components/Nav.vue'
 </script>
 
 <template>
@@ -10,7 +9,6 @@ import Nav from '../components/Nav.vue'
       <Searched_images />
     </div>
     <main class = "input-page">
-      <Nav />
       <Input_Item />
     </main>
   </div>
