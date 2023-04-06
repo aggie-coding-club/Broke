@@ -1,22 +1,27 @@
 <template>
     <footer>
+        <v-divider>
         <div class = "footer">
-            <h3>---------------------------------------------------------------------------------------------------------------------------------------------------------------------</h3>
+            <h3 class = "divider">---------------------------------------------------------------------------------------------------------------</h3>
             <h3><span style = "font-weight: bold">Contact us:</span> brokeapp@gmail.com</h3>
             <h3 style = "font-weight: bold">Feedback</h3>
         </div>
+        </v-divider>
     </footer>
 </template>
 
 <style>
 
 div.footer{
-    position: absolute;
+    position: fixed;
     height: 12vh;
     width: 90vw;
-    left: 30vw;
-    top: 33vh;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    
+    bottom: 0vh;
+    left: 5vw;
+}
+div.divider{
+    width: 90vw;
+    
 }
 </style>

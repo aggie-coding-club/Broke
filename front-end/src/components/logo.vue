@@ -14,14 +14,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    /*left: 6vw;
-    bottom: 58vh;
-   left: -77.5vw;
-    top: -10vh;*/
-    right: 8vw;
+    /*
+    right: 38vw;
     bottom: 35vh;
-    
-    position: absolute;
+    */
+    left: 10vw;
+    top: 5vh;
+    position: fixed;
+    z-index: 1;
 }
 
 .logo-picture{

@@ -12,7 +12,6 @@
 .map-wrapper {
   width: 490px;
   height: 450px;
-  border: 2px solid red;
 }
 
 .map-img {
