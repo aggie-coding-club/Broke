@@ -1,6 +1,7 @@
 <script setup>
 import Map from "../components/Map.vue";
 import PlaceholderStores from "../components/PlaceholderStores.vue";
+import Nav from '../components/Nav.vue'
 
 </script>
 <template>
@@ -10,6 +11,9 @@ import PlaceholderStores from "../components/PlaceholderStores.vue";
   </div>
   <div class = "stores-view">
     <PlaceholderStores></PlaceholderStores>
+  </div>
+  <div>
+    <Nav></Nav>
   </div>
 </div>
 </template>

@@ -19,7 +19,7 @@
     bottom: 35vh;
     */
     left: 10vw;
-    top: 5vh;
+    top: 6vh;
     position: fixed;
     z-index: 1;
 }

@@ -49,6 +49,56 @@
     <div class="address">123 Main St. College Station, TX</div>
     <div class="hours">6AM - 6PM</div>
   </div>
+
+  <div class="result">
+    <div class="flexbox">
+       	<div class="storeName">Brookshire Brothers Express (Add on for length)</div>
+        <div class="price">$19.99</div>
+    </div>
+    <div class="dist">2.5 mi</div>
+    <div class="address">123 Main St. College Station, TX</div>
+    <div class="hours">6AM - 6PM</div>
+  </div>
+
+  <div class="result">
+    <div class="flexbox">
+       	<div class="storeName">Brookshire Brothers Express (Add on for length)</div>
+        <div class="price">$19.99</div>
+    </div>
+    <div class="dist">2.5 mi</div>
+    <div class="address">123 Main St. College Station, TX</div>
+    <div class="hours">6AM - 6PM</div>
+  </div>
+
+  <div class="result">
+    <div class="flexbox">
+       	<div class="storeName">Brookshire Brothers Express (Add on for length)</div>
+        <div class="price">$19.99</div>
+    </div>
+    <div class="dist">2.5 mi</div>
+    <div class="address">123 Main St. College Station, TX</div>
+    <div class="hours">6AM - 6PM</div>
+  </div>
+
+  <div class="result">
+    <div class="flexbox">
+       	<div class="storeName">Brookshire Brothers Express (Add on for length)</div>
+        <div class="price">$19.99</div>
+    </div>
+    <div class="dist">2.5 mi</div>
+    <div class="address">123 Main St. College Station, TX</div>
+    <div class="hours">6AM - 6PM</div>
+  </div>
+
+  <div class="result">
+    <div class="flexbox">
+       	<div class="storeName">Brookshire Brothers Express (Add on for length)</div>
+        <div class="price">$19.99</div>
+    </div>
+    <div class="dist">2.5 mi</div>
+    <div class="address">123 Main St. College Station, TX</div>
+    <div class="hours">6AM - 6PM</div>
+  </div>
 </div>  
 </template>
 
@@ -65,7 +115,7 @@
   outline: 2px solid black;
   margin: 5px;
   border-radius:16px;
-  background-color:#d9d9d9;
+  background-color: rgb(244, 244, 244) /*#d9d9d9*/;
 }
 .flexbox {
   display:flex;
