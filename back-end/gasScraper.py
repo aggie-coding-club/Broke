@@ -9,7 +9,7 @@ from selenium.webdriver.support import expected_conditions as EC
 import time
 
 
-def valero(input: str, address: str) -> list:
+def gasSearch(input: str, address: str) -> list:
     '''
     For gas stations, the input string is simply ether 'diesel' or 'regular'
     '''
@@ -31,27 +31,29 @@ def valero(input: str, address: str) -> list:
         newlink = link[:fuel_type_index] + "4" + link[fuel_type_index+1:]
         driver.get(newlink)
 
-    time.sleep(5)
+    try:
+        # Load more results- first time
+        time.sleep(5)
+        button = driver.find_element(By.XPATH, '//*[@id="root"]/div/div[2]/div/div/div[1]/div[3]/a')
+        driver.execute_script("arguments[0].click();", button)
+        
+        # Load more results- subsequent times
+        # Needs to wait for previous process to finish or else results will be duplicated
+        # If need more results, copy and paste the following four lines of code 
+        driver.implicitly_wait(5)
+        time.sleep(5)
+        button = driver.find_element(By.XPATH, '//*[@id="root"]/div/div[2]/div/div/div[1]/div[3]/a')
+        driver.execute_script("arguments[0].click();", button)
 
-    # Load more results- first time
-    button = driver.find_element(By.XPATH, '//*[@id="root"]/div/div[2]/div/div/div[1]/div[3]/a')
-    driver.execute_script("arguments[0].click();", button)
-    
-    # Load more results- subsequent times
-    # Needs to wait for previous process to finish or else results will be duplicated
-    # If need more results, copy and paste the following four lines of code 
-    driver.implicitly_wait(10)
-    time.sleep(5)
+        # Load more- subsequent time
+        driver.implicitly_wait(5)
+        time.sleep(5)
+        button = driver.find_element(By.XPATH, '//*[@id="root"]/div/div[2]/div/div/div[1]/div[3]/a')
+        driver.execute_script("arguments[0].click();", button)
 
-    button = driver.find_element(By.XPATH, '//*[@id="root"]/div/div[2]/div/div/div[1]/div[3]/a')
-    driver.execute_script("arguments[0].click();", button)
-
-    # Load more- subsequent time
-    driver.implicitly_wait(10)
-    time.sleep(5)
-
-    button = driver.find_element(By.XPATH, '//*[@id="root"]/div/div[2]/div/div/div[1]/div[3]/a')
-    driver.execute_script("arguments[0].click();", button)
+    except Exception as e:
+        print(e)
+        driver.quit()
     
 
     # Obtain gas stations list
@@ -87,5 +89,4 @@ def valero(input: str, address: str) -> list:
     return station_list
 
 
-gas = valero("diesel", "Bronx")
-print(gas)
+gas = gasSearch("diesel", "Bronx")
