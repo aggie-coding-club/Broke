@@ -21,7 +21,7 @@
         background-color:rgb(244, 244, 244);
         width: 100%;
         height: 43px;
-        border-radius: 7px;
+        border-bottom: 1px solid rgb(200, 200, 200);;
     }
     .navbar-button {
         background-color: white;
