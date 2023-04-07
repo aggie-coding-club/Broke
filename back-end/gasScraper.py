@@ -1,3 +1,4 @@
+
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service
@@ -10,8 +11,9 @@ import time
 
 
 def gasSearch(input: str, address: str) -> list:
+
     '''
-    For gas stations, the input string is simply ether 'diesel' or 'regular'
+    take 2 parameters, type_of_gas specifiying regular or diesel, and radius
     '''
 
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()) )
