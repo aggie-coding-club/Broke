@@ -35,7 +35,6 @@ def demo():
         element = WebDriverWait(driver, 10).until(
             EC.presence_of_element_located((By.ID, "ctl00_ContentPlaceHolder1__editor__pageContent"))
         )
-        #element = driver.find_element(By.ID, "ctl00_ContentPlaceHolder1__editor__pageContent")
 
         paragraphs = element.find_elements(By.TAG_NAME, 'p')
         
