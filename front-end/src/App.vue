@@ -6,13 +6,13 @@ import Logo from "./components/logo.vue";
 
 <template>
  
- 
+ <header>
+    <Logo />
+  </header>
   <div>
     <RouterView />
   </div>
-  <header>
-    <Logo />
-  </header>
+  
   <Footer></Footer>
 
 </template>
