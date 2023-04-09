@@ -1,6 +1,9 @@
 <script>
 export default {
   methods: {
+    to_input() {
+      this.$router.push("/userinput");
+    },
     grocery_page() {
       let title = "grocery";
       console.log(title); // grocery will be printed out to console when that button is clicked, the actual functionality will be added later on
@@ -23,32 +26,32 @@ export default {
 <template>
   <div class="cat-buttons">
     <ul>
-      <router-link to="/userinput" custom v-slot="{ navigate }">
-        <!--
+      <!-- <router-link to="/userinput" custom v-slot="{ navigate }"> -->
+      <!--
             <li><button @click="grocery_page" role = "link" class="cate_btn">Grocery</button></li>
             <li><button @click="dinning_page" class="cate_btn">Dining</button></li>
             <li><button @click="drinks_page" class="cate_btn">Drinks</button></li>
             <li><button @click="gas_page" class="cate_btn">Gas</button></li>
             -->
-        <li>
-          <button @click="navigate, grocery_page()" class="cate_btn">
-            Grocery
-          </button>
-        </li>
-        <li>
-          <button @click="navigate, dining_page()" class="cate_btn">
-            Dining
-          </button>
-        </li>
-        <li>
-          <button @click="navigate, drinks_page()" class="cate_btn">
-            Drinks
-          </button>
-        </li>
-        <li>
-          <button @click="navigate, gas_page()" class="cate_btn">Gas</button>
-        </li>
-      </router-link>
+      <li>
+        <button @click="to_input(), grocery_page()" class="cate_btn">
+          Grocery
+        </button>
+      </li>
+      <li>
+        <button @click="to_input(), dining_page()" class="cate_btn">
+          Dining
+        </button>
+      </li>
+      <li>
+        <button @click="to_input(), drinks_page()" class="cate_btn">
+          Drinks
+        </button>
+      </li>
+      <li>
+        <button @click="to_input(), gas_page()" class="cate_btn">Gas</button>
+      </li>
+      <!-- </router-link> -->
     </ul>
   </div>
 </template>
