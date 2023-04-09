@@ -36,31 +36,46 @@ def uberEats(stores : list, item : str, address: str) -> dict:
 
     WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, "search-suggestions-typeahead-input")))
 
-    # Search for items
-    items = driver.find_element(By.ID, "search-suggestions-typeahead-input")
-    items.clear()
-    items.send_keys(item)  
-    items.send_keys(Keys.RETURN) 
 
-    time.sleep(5) 
-
+    # Search for items- in list
     scraped_products = {}
 
-    # Get Restaurants
-    restaurants = driver.find_elements(By.XPATH, '//*[@id="main-content"]/div/div/div[2]/div/div[2]/div')
-    for restaurant in restaurants:
-        name = restaurant.find_element(By.XPATH, './div[1]/a/h3')
+    for restaurant in stores:
+        search = driver.find_element(By.ID, "search-suggestions-typeahead-input")
+        search.send_keys(Keys.CONTROL + "a")
+        search.send_keys(Keys.DELETE)
+        search.send_keys(restaurant)  
+        search.send_keys(Keys.RETURN) 
+
+        time.sleep(5)
+
+        # Scraping Restaurant- Get first search result
+        results = driver.find_element(By.XPATH, '//*[@id="main-content"]/div/div/div[2]/div/div[2]')
+        name = results.find_element(By.TAG_NAME, 'a')
         print(name.text)
-        # click on restaurants
-        # find menu and process data
-        # go back and click on the next one
+
+        # click on restaurant and navigate to menu page
+        time.sleep(10)
+        link = driver.find_element(By.LINK_TEXT, name.text)
+        driver.execute_script('arguments[0].click()', link)
+
+        time.sleep(10)
+
+        # Handle pop ups- find a way to disable them so that menu is not messed up
+        
+        # Process Menu- TO DO
+        # Look for cheapest, add to dictionary
+
+        # Navigate back to list of restaurants
+        driver.back()
+        time.sleep(10)
 
 
-    print("Yay")
     return scraped_products
 
 
 
-address = "125 Spence St, College Station" #Zachry
+address = "125 Spence St, College Station" #Zachry Engineering Building
 item = "burgers"
-uberEats([], item, address)
+stores = ["McDonalds", "Whataburger", "Hopdoddy"]
+uberEats(stores, item, address)
