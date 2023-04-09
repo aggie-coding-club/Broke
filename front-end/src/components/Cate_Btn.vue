@@ -1,24 +1,21 @@
 <script>
 export default {
   methods: {
-    to_input() {
-      this.$router.push("/userinput");
-    },
     grocery_page() {
-      let title = "grocery";
-      console.log(title); // grocery will be printed out to console when that button is clicked, the actual functionality will be added later on
+      this.$router.push("/userinput");
+      console.log("grocery"); // grocery will be printed out to console when that button is clicked, the actual functionality will be added later on
     },
     dining_page() {
-      let title = "dining";
-      console.log(title);
+      this.$router.push("/userinput");
+      console.log("dining");
     },
     drinks_page() {
-      let title = "drinks";
-      console.log(title);
+      this.$router.push("/userinput");
+      console.log("drinks");
     },
     gas_page() {
-      let title = "gas";
-      console.log(title);
+      this.$router.push("/userinput");
+      console.log("gas");
     },
   },
 };
@@ -34,22 +31,16 @@ export default {
             <li><button @click="gas_page" class="cate_btn">Gas</button></li>
             -->
       <li>
-        <button @click="to_input(), grocery_page()" class="cate_btn">
-          Grocery
-        </button>
+        <button @click="grocery_page" class="cate_btn">Grocery</button>
       </li>
       <li>
-        <button @click="to_input(), dining_page()" class="cate_btn">
-          Dining
-        </button>
+        <button @click="dining_page" class="cate_btn">Dining</button>
       </li>
       <li>
-        <button @click="to_input(), drinks_page()" class="cate_btn">
-          Drinks
-        </button>
+        <button @click="drinks_page" class="cate_btn">Drinks</button>
       </li>
       <li>
-        <button @click="to_input(), gas_page()" class="cate_btn">Gas</button>
+        <button @click="gas_page" class="cate_btn">Gas</button>
       </li>
       <!-- </router-link> -->
     </ul>
