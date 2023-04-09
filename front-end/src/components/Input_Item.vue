@@ -62,6 +62,7 @@ export default{
       postResponse: []
     }
   },
+
   methods: {
     createPost(){
       axios.post('http://127.0.0.1:5000/restdemo', this.postData)
