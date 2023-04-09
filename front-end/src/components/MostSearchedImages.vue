@@ -75,9 +75,10 @@ export default {
     display: flex;
     flex-wrap: wrap;
   	height: 365px;
-  	width: 500px;
+  	width: 35vw;
     margin-left: 0px;
     margin-top: 32px;
+    border: 2px solid red;
 }
 
 .searched-header-text{
@@ -88,7 +89,7 @@ export default {
     color-scheme: #000000;
     font-size: 32px;
     font-weight: 400;
-    width: 450px;
+    width: 35vw;
     margin: 0 auto;
 }
 
