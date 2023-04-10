@@ -21,10 +21,11 @@ def uberEats(stores : list, item : str, address: str) -> dict:
     {"Hopdoddy" : ("cheeseburger", 10.99)}
 
     '''
-    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()) )
+
+    # Driver
+    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
     driver.get("https://www.ubereats.com/")
     driver.maximize_window()
-
 
     # Search location and navigate to next page
     location = driver.find_element(By.ID, "location-typeahead-home-input")
@@ -55,16 +56,33 @@ def uberEats(stores : list, item : str, address: str) -> dict:
         print(name.text)
 
         # click on restaurant and navigate to menu page
-        time.sleep(10)
+        time.sleep(2)
         link = driver.find_element(By.LINK_TEXT, name.text)
         driver.execute_script('arguments[0].click()', link)
 
-        time.sleep(10)
+        time.sleep(5)
 
-        # Handle pop ups- find a way to disable them so that menu is not messed up
-        
-        # Process Menu- TO DO
-        # Look for cheapest, add to dictionary
+
+        # Try to find the search bar- if it cannot be accessed, go back to close the popup
+        try:
+            test = driver.find_element(By.ID, "search-suggestions-typeahead-input")
+            test.send_keys(Keys.CONTROL + "a")
+        except:
+            driver.back()
+
+
+        # Obtain list of items from menu and process
+        items = driver.find_element(By.XPATH, '//*[@id="main-content"]/div[5]/div[1]/div[4]/ul') 
+        print(items.text)
+
+        # Look for cheapest option, add to dictionary
+        # Look for category keyword matches first
+
+        # If none, look for individual keyword matches
+
+
+
+        time.sleep(10)
 
         # Navigate back to list of restaurants
         driver.back()
