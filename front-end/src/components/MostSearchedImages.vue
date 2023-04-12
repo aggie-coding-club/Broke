@@ -14,7 +14,7 @@ export default {
 </script>
 
 <template>
-
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter+Tight">
     <h2 class="searched-header-text">Most Searched Items in the last week: </h2>
     <div class="item_pictures">
         <div class="item_picture-wrapper">
@@ -102,6 +102,8 @@ export default {
 .item-text{
     font-weight: 400;
     font-size: 24px;
+    font-family: "Inter Tight", sans-serif;
+    color: #000000;
 }
 
 .item_picture{

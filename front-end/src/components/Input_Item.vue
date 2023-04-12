@@ -8,6 +8,7 @@ export default {
 
 
 <template>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter+Tight">
   <div>
     <div class = "title"> 
         <h2>Input Item</h2>
@@ -112,6 +113,7 @@ input.text {
   border-radius: 10px;
   box-shadow: hsla(240, 30%, 28%, 0.251) 0px 2px 5px -1px,
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  font-family: "Inter Tight", sans-serif;
 }
 
 input.checkbox{
@@ -167,6 +169,9 @@ input.checkbox{
   width: 44vw;
   left: 3vw;
   top: 5vh;
+}
+h2{
+  font-family: "Inter Tight", sans-serif;
 }
 </style>
 

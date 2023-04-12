@@ -1,4 +1,5 @@
 <template>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter+Tight">
         <div class="description-wrapper">
             <div class="description">
                 <h2>
@@ -31,6 +32,8 @@ div.description{
     display: relative;
     font-size: 12px;
     color: #000000;
+    font-family: "Inter Tight", sans-serif;
+    /*font-weight: 100;*/
 }
 
 </style>
