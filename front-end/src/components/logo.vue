@@ -2,10 +2,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans">
     <div class="logo-wrapper">
         <img src="@/assets/broke-logo.png" alt="logo" class="logo-picture">
-        <div class="logo-text">
-            <h2>Budget</h2>
-            <h2 id="name">Guard</h2>
-            <!--<h2>Budget Guard</h2>-->
+        <div>
+        <h2 class = "logo-text">Budget</h2>
+        <h2 class = "logo-text" id="name">Guard</h2>
         </div>
     </div>
 </template>
@@ -44,11 +43,11 @@
     color: #65a565;
     font-family: "Josefin Sans", sans-serif;
     flex-wrap: wrap;
-    font-style: italic;
-    font-weight: bolder;
+    font-style: normal;
+    font-weight: 400;
 }
 #name{
     color: #3e663e;
-    font-weight: 1000;
+    font-weight: 900;
 }
 </style>
