@@ -2,6 +2,7 @@
 </script>
 
 <template>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter+Tight">
     <nav>
         <ul class="navbar">
             <a href="/">
@@ -31,5 +32,6 @@
         height: 35px;
         width: 80px;
         border-radius: 20px;
+        font-family: 'Inter Tight', sans-serif;
     }
 </style>
