@@ -32,4 +32,7 @@
         width: 80px;
         border-radius: 20px;
     }
+    .navbar-button:hover{
+        transform: scale(1.1);
+    }
 </style>
