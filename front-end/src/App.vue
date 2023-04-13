@@ -10,7 +10,18 @@ import Logo from "./components/logo.vue";
     <Logo />
   </header>
   <div>
-    <RouterView />
+    <nav>
+      <RouterLink to="/">Home</RouterLink>
+      <RouterLink to="/userinput">Input</RouterLink>
+    </nav>
+
+    <RouterView v-slot = "{Component}">
+
+      <transition :name="fade" out-in>
+        <Component :is="Component" />
+      </transition>
+
+    </RouterView>
   </div>
   
   <Footer></Footer>
@@ -88,5 +99,16 @@ nav a:first-of-type {
   footer {
     text-align: center;
   }
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease-out;
 }
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+  }
 </style>
