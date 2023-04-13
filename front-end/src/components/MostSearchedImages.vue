@@ -91,6 +91,7 @@ export default {
     font-weight: 400;
     width: 35vw;
     margin: 0 auto;
+    font-family: "Inter Tight", sans-serif;
 }
 
 .item_text-wrapper{

@@ -134,6 +134,7 @@ input.checkbox{
   box-shadow: #32325d40 0px 2px 5px -1px;
   background: rgb(244, 244, 244);
   border: 1px solid black;
+  font-family: "Inter Tight", sans-serif;
 }
 .buttons:hover{
   transform: scale(1.1);
@@ -151,6 +152,7 @@ input.checkbox{
   background: rgb(244, 244, 244);
   border: 1px solid black;
   font-size: 18px;
+  font-family: "Inter Tight", sans-serif;
 }
 .pill:hover{
   transform: scale(1.1);
@@ -162,6 +164,7 @@ input.checkbox{
 }
 .open-store-label{
   font-size: 18px;
+  font-family: "Inter Tight", sans-serif;
 }
 
 .bottom-user{

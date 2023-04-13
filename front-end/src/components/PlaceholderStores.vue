@@ -1,4 +1,5 @@
 <template>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter+Tight">
 <div class="resultBox">
 	<div class="result">
     <div class="flexbox">
@@ -196,5 +197,8 @@
   overflow-wrap: break-word;
   max-width: 15vw; 
   text-align: right;
+}
+.storeName, .price, .dist, .address, .hours{
+  font-family: "Inter Tight", sans-serif;
 }
 </style>
