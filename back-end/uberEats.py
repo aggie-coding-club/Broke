@@ -71,29 +71,95 @@ def uberEats(stores : list, item : str, address: str) -> dict:
             driver.back()
 
 
+        # first of two possible xpaths
         # Obtain list of items from menu and process
-        items = driver.find_element(By.XPATH, '//*[@id="main-content"]/div[5]/div[1]/div[4]/ul') 
-        print(items.text)
+        items = driver.find_elements(By.XPATH, '//*[@id="main-content"]/div[5]/div[1]/div[4]/ul/li') 
+        # Look for cheapest option, add cheapest to dictionary
+        # Cycle through categories of menu
+        for category in items:
+            try:
+                category_name = category.find_element(By.TAG_NAME, 'h3')
+                print("Category:" + category_name.text)
 
-        # Look for cheapest option, add to dictionary
-        # Look for category keyword matches first
+                time.sleep(3)
 
-        # If none, look for individual keyword matches
+                # Get menu items and information
+                menu_list = category.find_element(By.XPATH, './ul')
+                menu_items = menu_list.find_elements(By.XPATH, './li')
+                for menu_item in menu_items:
+                    try:
+                        item_name = menu_item.find_element(By.XPATH, './div/div/div[1]/div[1]/div[1]/span').text
+                        item_price = menu_item.find_element(By.XPATH, './div/div/div[1]/div[1]/div[2]/span[1]').text
+                        # remove dollar sign
+                        item_price = item_price[1:]
+                        # If category contains keywords
+                        print(item_name + " " + item_price)
+                        if item.lower() in category_name.text.lower():
+                            # if restaurant has not been added or new product is cheaper
+                            if restaurant not in scraped_products or scraped_products[restaurant][1] > float(item_price):
+                                scraped_products[restaurant] = (item_name, float(item_price))
+                        # If itemname contains keywords
+                        elif item.lower() in item_name.lower():
+                            if restaurant not in scraped_products or scraped_products[restaurant][1] > float(item_price):
+                                scraped_products[restaurant] = (item_name, float(item_price))
+                    except Exception as e:
+                        print(e)
+                        print("No data in this menu entry")
+            except:
+                # gap in the menu- skip over since no data is displayed in element block
+                print("No data in this category")
 
 
+        time.sleep(5)
 
-        time.sleep(10)
+        # second of two possible xpaths
+        items = driver.find_elements(By.XPATH, '//*[@id="main-content"]/div[6]/div[1]/div[4]/ul/li') 
+        for category in items:
+            try:
+                category_name = category.find_element(By.TAG_NAME, 'h3')
+                print("Category:" + category_name.text)
+
+                time.sleep(3)
+
+                # Get menu items and information
+                menu_list = category.find_element(By.XPATH, './ul')
+                menu_items = menu_list.find_elements(By.XPATH, './li')
+
+                for menu_item in menu_items:
+                    try:
+                        item_name = menu_item.find_element(By.XPATH, './div/div/div[1]/div[1]/div[1]/span').text
+                        item_price = menu_item.find_element(By.XPATH, './div/div/div[1]/div[1]/div[2]/span[1]').text
+                        # remove dollar sign
+                        item_price = item_price[1:]
+                        # If category contains keywords
+                        print(item_name + " " + item_price)
+                        if item.lower() in category_name.text.lower():
+                            # if restaurant has not been added or new product is cheaper
+                            if restaurant not in scraped_products or scraped_products[restaurant][1] > float(item_price):
+                                scraped_products[restaurant] = (item_name, float(item_price))
+                        # If itemname contains keywords
+                        elif item.lower() in item_name.lower():
+                            if restaurant not in scraped_products or scraped_products[restaurant][1] > float(item_price):
+                                scraped_products[restaurant] = (item_name, float(item_price))
+                    except Exception as e:
+                        print(e)
+            except:
+                # gap in the menu- skip over since no data is displayed in element block
+                print("No data in this category")
+
 
         # Navigate back to list of restaurants
+        time.sleep(5)
         driver.back()
-        time.sleep(10)
-
+        time.sleep(5)
 
     return scraped_products
 
 
 
 address = "125 Spence St, College Station" #Zachry Engineering Building
-item = "burgers"
-stores = ["McDonalds", "Whataburger", "Hopdoddy"]
-uberEats(stores, item, address)
+item = "Nuggets"
+stores = ["Chick-fil-A", "McDonalds"]
+results = uberEats(stores, item, address)
+print("Results:")
+print(results)
