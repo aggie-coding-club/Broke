@@ -6,6 +6,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.select import Select
+import re
 
 import time
 
@@ -43,8 +44,10 @@ def uberEats(stores : list, item : str, address: str) -> dict:
 
     for restaurant in stores:
         search = driver.find_element(By.ID, "search-suggestions-typeahead-input")
+        time.sleep(1)
         search.send_keys(Keys.CONTROL + "a")
         search.send_keys(Keys.DELETE)
+        time.sleep(2)
         search.send_keys(restaurant)  
         search.send_keys(Keys.RETURN) 
 
@@ -85,7 +88,7 @@ def uberEats(stores : list, item : str, address: str) -> dict:
         for category in items:
             try:
                 category_name = category.find_element(By.TAG_NAME, 'h3')
-                print("Category:" + category_name.text)
+                print("----Category: " + category_name.text)
 
                 # Get menu items and information
                 WebDriverWait(category, 10).until(EC.presence_of_element_located((By.XPATH, './ul')))
@@ -98,9 +101,13 @@ def uberEats(stores : list, item : str, address: str) -> dict:
 
                 for menu_item in menu_items:
                     try:
-                        data = menu_item.text.split('\n')
-                        item_name = data[0]
-                        item_price = data[1]
+                        data = re.split('\n|•', menu_item.text)
+                        if data[0] == "Popular":
+                            item_name = data[1]
+                            item_price = data[2]
+                        else:
+                            item_name = data[0]
+                            item_price = data[1]
                         # remove dollar sign
                         item_price = item_price[1:]
                         # If category contains keywords
@@ -130,8 +137,8 @@ def uberEats(stores : list, item : str, address: str) -> dict:
 
 
 address = "125 Spence St, College Station" #Zachry Engineering Building
-item = "Burgers"
-stores = ["Burger King", "Hopdoddy"]
+item = "Latte"
+stores = ["Starbucks", "Sharetea"]
 results = uberEats(stores, item, address)
 print("Results:")
 print(results)
