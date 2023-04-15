@@ -12,12 +12,12 @@ export default {
     <div class = "title"> 
         <h2>Input Item</h2>
     </div>
-    <input class ="text" type="text" v-model="input" placeholder="Search..." />
+    <input class ="text" type="text" v-model="postData.item" placeholder="Search..." />
 
     <div class = "title"> 
         <h2>Current Location</h2>
     </div>
-    <input class ="text" type="text" v-model="input2" placeholder="Search..." />
+    <input class ="text" type="text" v-model="postData.location" placeholder="Search..." />
 
     <div class = "title">
         <h2>Search Radius (miles)</h2>
@@ -35,7 +35,7 @@ export default {
         <input type ="checkbox" value="Display open stores only" id="Display open stores only" class = "checkbox">
       </div>
       <router-link to="/result" custom v-slot="{ navigate }">
-        <button class="pill" @click="navigate">Search</button>
+        <button class="pill" @click="createGet()">Search</button>
       </router-link>
     </div>
     
@@ -46,6 +46,43 @@ export default {
 <script setup>
 import { ref } from "vue";
 let input = ref("");
+</script>
+
+<script>
+import axios from "axios";
+
+export default{
+  data(){
+    return {
+      postData: {
+        item: '',
+        location: ''
+      },
+      getResponse: [],
+      postResponse: []
+    }
+  },
+
+  methods: {
+    createPost(){
+      axios.post('http://127.0.0.1:5000/restdemo', this.postData)
+        .then((response) => {this.postResponse = JSON.stringify(response.data); this.printData('post');})
+    },
+
+    createGet(){
+      axios.get('http://127.0.0.1:5000/restdemo')
+        .then((response) => {this.getResponse = JSON.stringify(response.data); this.printData('get');})
+    },
+
+    printData(typeOfData){
+      if(typeOfData === 'post'){
+        console.log(JSON.parse(this.postResponse))
+      }else if(typeOfData === 'get'){
+        console.log(JSON.parse(this.getResponse))
+      }
+    }
+  }
+}
 </script>
 
 <style scoped>
