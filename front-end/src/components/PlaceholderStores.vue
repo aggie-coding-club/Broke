@@ -1,8 +1,28 @@
+<script setup>
+  import DisplayItem from './DisplayItem.vue'
+  import { ref } from 'vue'
+  const stores = ref([
+    {id: 0, name: 'HEB', price: 10.99},
+    {id: 1, name: 'Costco', price: 69.69},
+    {id: 2, name: 'Walmart', price: 19.99},
+  ])
+</script>
+
 <template>
 <div class="resultBox">
-	<div class="result">
-    <div class="flexbox">
-       	<div class="storeName">HEB</div>
+  <div v-for="store in stores" :key="store.id">
+    <DisplayItem :store-name=store.name :price=store.price></DisplayItem>
+  </div>
+  
+</div>
+
+</template>
+<!--
+
+  <div class="resultBox">
+    <div class="result">
+      <div class="flexbox">
+        <div class="storeName">HEB</div>
         <div class="price">$19.99</div>
     </div>
     <div class="flexbox">
@@ -19,8 +39,8 @@
 
   <div class="result">
     <div class="flexbox">
-       	<div class="storeName">Costco</div>
-        <div class="price">$19.99</div>
+      <div class="storeName">Costco</div>
+      <div class="price">$19.99</div>
     </div>
     <div class="flexbox">
       <div class = "store-details">
@@ -32,14 +52,14 @@
     </div>
   </div>
   <br>
-
+  
   <div class="result">
     <div class="flexbox">
        	<div class="storeName">Walmart</div>
         <div class="price">$19.99</div>
-    </div>
-    <div class="flexbox">
-      <div class = "store-details">
+      </div>
+      <div class="flexbox">
+        <div class = "store-details">
         <div class="dist">2.5 mi</div>
         <div class="address">123 Main St. College Station, TX</div>
         <div class="hours">6AM - 6PM</div>
@@ -51,7 +71,7 @@
 
   <div class="result">
     <div class="flexbox">
-       	<div class="storeName">Really Long Name Here</div>
+      <div class="storeName">Really Long Name Here</div>
         <div class="price">$19.99</div>
     </div>
     <div class="flexbox">
@@ -64,7 +84,7 @@
     </div>
   </div>
   <br>
-
+  
   <div class="result">
     <div class="flexbox">
        	<div class="storeName">Brookshire Brothers Express (Add on for length)</div>
@@ -133,7 +153,7 @@
     <div class="flexbox">
        	<div class="storeName">Brookshire Brothers Express (Add on for length)</div>
         <div class="price">$19.99</div>
-    </div>
+      </div>
     <div class="flexbox">
       <div class = "store-details">
         <div class="dist">2.5 mi</div>
@@ -161,6 +181,7 @@
   </div>
 </div>  
 </template>
+-->
 
 
 
