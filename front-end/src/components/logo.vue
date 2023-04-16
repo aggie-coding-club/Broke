@@ -1,8 +1,10 @@
 <template>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans">
     <div class="logo-wrapper">
         <img src="@/assets/broke-logo.png" alt="logo" class="logo-picture">
-        <div class="logo-text">
-            <h2>Budget Guard</h2>
+        <div>
+        <h2 class = "logo-text">Budget</h2>
+        <h2 class = "logo-text" id="name">Guard</h2>
         </div>
     </div>
 </template>
@@ -33,11 +35,19 @@
 .logo-text{
     height: 8vh;
     width: 20vw;
-    left: 1vw;
+    left: -3vw;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 3vw;
-    color: #000000;
+    font-size: 4vw;
+    color: #65a565;
+    font-family: "Josefin Sans", sans-serif;
+    flex-wrap: wrap;
+    font-style: normal;
+    font-weight: 500;
+}
+#name{
+    color: #3e663e;
+    font-weight: 500;
 }
 </style>

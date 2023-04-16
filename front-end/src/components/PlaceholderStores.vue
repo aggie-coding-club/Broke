@@ -9,6 +9,7 @@
 </script>
 
 <template>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter+Tight">
 <div class="resultBox">
   <div v-for="store in stores" :key="store.id">
     <DisplayItem :store-name=store.name :price=store.price></DisplayItem>
@@ -217,5 +218,8 @@
   overflow-wrap: break-word;
   max-width: 15vw; 
   text-align: right;
+}
+.storeName, .price, .dist, .address, .hours{
+  font-family: "Inter Tight", sans-serif;
 }
 </style>
