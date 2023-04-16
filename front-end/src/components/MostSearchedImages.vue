@@ -14,7 +14,7 @@ export default {
 </script>
 
 <template>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter+Tight">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans">
     <h2 class="searched-header-text">Most Searched Items in the last week: </h2>
     <div class="item_pictures">
         <div class="item_picture-wrapper">
@@ -86,12 +86,13 @@ export default {
     align-items: center;
     line-height: 39px;
     text-align: center;
-    color-scheme: #000000;
+    color-scheme: #434242;
     font-size: 32px;
     font-weight: 400;
     width: 35vw;
     margin: 0 auto;
-    font-family: "Inter Tight", sans-serif;
+    top: 2vh;
+    font-family: "Josefin Sans", sans-serif;
 }
 
 .item_text-wrapper{

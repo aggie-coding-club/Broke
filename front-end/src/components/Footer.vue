@@ -18,7 +18,7 @@ div.footer{
     height: 12vh;
     width: 90vw;
     
-    bottom: 0vh;
+    bottom: -1vh;
     left: 5vw;
     display: flex;
     flex-direction: column;

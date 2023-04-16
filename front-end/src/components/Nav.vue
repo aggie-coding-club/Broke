@@ -2,7 +2,7 @@
 </script>
 
 <template>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter+Tight">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans">
     <nav>
         <ul class="navbar">
             <a href="/">
@@ -32,6 +32,6 @@
         height: 35px;
         width: 80px;
         border-radius: 20px;
-        font-family: 'Inter Tight', sans-serif;
+        font-family: 'Josefin Sans', sans-serif;
     }
 </style>

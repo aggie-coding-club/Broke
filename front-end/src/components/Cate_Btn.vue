@@ -17,7 +17,7 @@ export default {
 }
 </script>
 <template>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter+Tight">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans">
     <div class = "cat-buttons">
         <ul>
             <router-link to="/userinput" custom v-slot="{ navigate }">
@@ -52,7 +52,7 @@ export default {
         width: 20vw;
         transition: .4s;
         border: 1px solid black;
-        font-family: "Inter Tight", sans-serif;
+        font-family: "Josefin Sans", sans-serif;
     } 
     .cate_btn:hover{
         transform: scale(1.1);
