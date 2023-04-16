@@ -39,15 +39,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 3vw;
+    font-size: 4vw;
     color: #65a565;
     font-family: "Josefin Sans", sans-serif;
     flex-wrap: wrap;
     font-style: normal;
-    font-weight: 900;
+    font-weight: 500;
 }
 #name{
     color: #3e663e;
-    font-weight: 900;
+    font-weight: 500;
 }
 </style>
