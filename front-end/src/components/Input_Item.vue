@@ -82,6 +82,8 @@ export default{
       }
     }
   }
+
+
 }
 </script>
 
@@ -132,10 +134,18 @@ input.checkbox{
   box-shadow: #32325d40 0px 2px 5px -1px;
   background: rgb(244, 244, 244);
   border: 1px solid black;
+  border-radius: 10px;
 }
 .buttons:hover{
   transform: scale(1.1);
 }
+
+.buttons:focus{
+  transform: scale(1.1);
+  background-color: rgb(217, 217, 217);
+}
+
+
 .radius-buttons{
   display: flex;
   justify-content: center;
