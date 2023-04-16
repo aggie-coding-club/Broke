@@ -10,6 +10,7 @@
 
 <template>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter+Tight">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans">
 <div class="resultBox">
   <div v-for="store in stores" :key="store.id">
     <DisplayItem :store-name=store.name :price=store.price></DisplayItem>
@@ -209,17 +210,18 @@
 .storeName, .price {
   color: #da2c2c;
   font-size: 2em;
-}
-.dist, .address, .hours {
-  color: black;
-  font-size: 1.3em;
+  font-family: "Inter Tight", sans-serif;
 }
 .item-name{
   overflow-wrap: break-word;
   max-width: 15vw; 
   text-align: right;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.0em;
 }
-.storeName, .price, .dist, .address, .hours{
-  font-family: "Inter Tight", sans-serif;
+.store-details{
+  color: black;
+  font-size: 1.2em;
+  font-family: "Josefin Sans", sans-serif;
 }
 </style>

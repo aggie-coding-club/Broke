@@ -1,5 +1,5 @@
 <template>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter+Tight">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Exo+2">
         <div class="description-wrapper">
             <div class="description">
                 <h2>
@@ -32,7 +32,7 @@ div.description{
     display: relative;
     font-size: 12px;
     color: #000000;
-    font-family: "Inter Tight", sans-serif;
+    font-family: "Exo 2", sans-serif;
     /*font-weight: 100;*/
 }
 
