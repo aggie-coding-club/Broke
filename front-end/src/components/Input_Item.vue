@@ -8,6 +8,7 @@ export default {
 
 
 <template>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans">
   <div>
     <div class = "title"> 
         <h2>Input Item</h2>
@@ -35,7 +36,8 @@ export default {
         <input type ="checkbox" value="Display open stores only" id="Display open stores only" class = "checkbox">
       </div>
       <router-link to="/result" custom v-slot="{ navigate }">
-        <button class="pill" @click="createGet()">Search</button>
+        <!--<button class="pill" @click="createGet()">Search</button>-->
+        <button class="pill" @click = navigate>Search</button>
       </router-link>
     </div>
     
@@ -97,6 +99,10 @@ export default{
     text-align: center;
     font-size: 19px;
     top: 10px;
+    
+}
+.title h2{
+  font-family: "Josefin Sans", sans-serif;
 }
 
 input.text {
@@ -112,6 +118,7 @@ input.text {
   border-radius: 10px;
   box-shadow: hsla(240, 30%, 28%, 0.251) 0px 2px 5px -1px,
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  font-family: "Josefin Sans", sans-serif;
 }
 
 input.checkbox{
@@ -132,6 +139,7 @@ input.checkbox{
   box-shadow: #32325d40 0px 2px 5px -1px;
   background: rgb(244, 244, 244);
   border: 1px solid black;
+  font-family: "Josefin Sans", sans-serif;
 }
 .buttons:hover{
   transform: scale(1.1);
@@ -149,6 +157,7 @@ input.checkbox{
   background: rgb(244, 244, 244);
   border: 1px solid black;
   font-size: 18px;
+  font-family: "Josefin Sans", sans-serif;
 }
 .pill:hover{
   transform: scale(1.1);
@@ -160,6 +169,7 @@ input.checkbox{
 }
 .open-store-label{
   font-size: 18px;
+  font-family: "Inter Tight", sans-serif;
 }
 
 .bottom-user{
@@ -167,6 +177,9 @@ input.checkbox{
   width: 44vw;
   left: 3vw;
   top: 5vh;
+}
+h2{
+  font-family: "Inter Tight", sans-serif;
 }
 </style>
 

@@ -1,8 +1,30 @@
+<script setup>
+  import DisplayItem from './DisplayItem.vue'
+  import { ref } from 'vue'
+  const stores = ref([
+    {id: 0, name: 'HEB', price: 10.99},
+    {id: 1, name: 'Costco', price: 69.69},
+    {id: 2, name: 'Walmart', price: 19.99},
+  ])
+</script>
+
 <template>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter+Tight">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans">
 <div class="resultBox">
-	<div class="result">
-    <div class="flexbox">
-       	<div class="storeName">HEB</div>
+  <div v-for="store in stores" :key="store.id">
+    <DisplayItem :store-name=store.name :price=store.price></DisplayItem>
+  </div>
+  
+</div>
+
+</template>
+<!--
+
+  <div class="resultBox">
+    <div class="result">
+      <div class="flexbox">
+        <div class="storeName">HEB</div>
         <div class="price">$19.99</div>
     </div>
     <div class="flexbox">
@@ -19,8 +41,8 @@
 
   <div class="result">
     <div class="flexbox">
-       	<div class="storeName">Costco</div>
-        <div class="price">$19.99</div>
+      <div class="storeName">Costco</div>
+      <div class="price">$19.99</div>
     </div>
     <div class="flexbox">
       <div class = "store-details">
@@ -32,14 +54,14 @@
     </div>
   </div>
   <br>
-
+  
   <div class="result">
     <div class="flexbox">
        	<div class="storeName">Walmart</div>
         <div class="price">$19.99</div>
-    </div>
-    <div class="flexbox">
-      <div class = "store-details">
+      </div>
+      <div class="flexbox">
+        <div class = "store-details">
         <div class="dist">2.5 mi</div>
         <div class="address">123 Main St. College Station, TX</div>
         <div class="hours">6AM - 6PM</div>
@@ -51,7 +73,7 @@
 
   <div class="result">
     <div class="flexbox">
-       	<div class="storeName">Really Long Name Here</div>
+      <div class="storeName">Really Long Name Here</div>
         <div class="price">$19.99</div>
     </div>
     <div class="flexbox">
@@ -64,7 +86,7 @@
     </div>
   </div>
   <br>
-
+  
   <div class="result">
     <div class="flexbox">
        	<div class="storeName">Brookshire Brothers Express (Add on for length)</div>
@@ -133,7 +155,7 @@
     <div class="flexbox">
        	<div class="storeName">Brookshire Brothers Express (Add on for length)</div>
         <div class="price">$19.99</div>
-    </div>
+      </div>
     <div class="flexbox">
       <div class = "store-details">
         <div class="dist">2.5 mi</div>
@@ -161,6 +183,7 @@
   </div>
 </div>  
 </template>
+-->
 
 
 
@@ -187,14 +210,18 @@
 .storeName, .price {
   color: #da2c2c;
   font-size: 2em;
-}
-.dist, .address, .hours {
-  color: black;
-  font-size: 1.3em;
+  font-family: "Inter Tight", sans-serif;
 }
 .item-name{
   overflow-wrap: break-word;
   max-width: 15vw; 
   text-align: right;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.0em;
+}
+.store-details{
+  color: black;
+  font-size: 1.2em;
+  font-family: "Josefin Sans", sans-serif;
 }
 </style>
