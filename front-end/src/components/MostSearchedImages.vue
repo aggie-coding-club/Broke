@@ -78,7 +78,6 @@ export default {
   	width: 35vw;
     margin-left: 0px;
     margin-top: 32px;
-    border: 2px solid red;
 }
 
 .searched-header-text{
