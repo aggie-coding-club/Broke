@@ -36,7 +36,8 @@ export default {
         <input type ="checkbox" value="Display open stores only" id="Display open stores only" class = "checkbox">
       </div>
       <router-link to="/result" custom v-slot="{ navigate }">
-        <button class="pill" @click="createGet()">Search</button>
+        <!--<button class="pill" @click="createGet()">Search</button>-->
+        <button class="pill" @click = navigate>Search</button>
       </router-link>
     </div>
     

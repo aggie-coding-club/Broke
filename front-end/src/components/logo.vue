@@ -35,7 +35,7 @@
 .logo-text{
     height: 8vh;
     width: 20vw;
-    left: 1vw;
+    left: -3vw;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -44,7 +44,7 @@
     font-family: "Josefin Sans", sans-serif;
     flex-wrap: wrap;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 900;
 }
 #name{
     color: #3e663e;
