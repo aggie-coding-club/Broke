@@ -35,5 +35,18 @@ def rest_test():
         'operation': 'not supported'
     }
 
+@app.route('/findlocations', methods=['GET'])
+def rest_test():
+    # GET allows front-end to get data from the back-end
+    if request.method == 'GET':
+        # calls function
+        result = demo()
+        if result != None:
+            # make into json file
+            return jsonify(result)
+        return {'Failed': 'idk'}
 
+    return {
+        'operation': 'not supported'
+    }
 

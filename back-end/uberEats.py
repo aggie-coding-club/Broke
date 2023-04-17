@@ -69,7 +69,6 @@ def uberEats(stores : list, item : str, address: str) -> dict:
 
         #time.sleep(5)
 
-
         # Try to find the search bar- if it cannot be accessed, go back to close the popup
         try:
             WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.ID, "search-suggestions-typeahead-input")))
@@ -139,8 +138,6 @@ def uberEats(stores : list, item : str, address: str) -> dict:
         time.sleep(1)
 
     return scraped_products
-
-
 
 address = "125 Spence St, College Station" #Zachry Engineering Building
 item = "Matcha"
