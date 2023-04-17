@@ -1,3 +1,14 @@
+from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.action_chains import ActionChains
+from parsel import Selector
+import time
+
 number_of_stores = 25
 
 def googleMap(item : str, address: str) -> dict : 
@@ -12,10 +23,63 @@ def googleMap(item : str, address: str) -> dict :
     Don’t include the same place twice (like McDonald)
     Return a dictionary of names and address
     {“McDonald” : “801 university dr, college station, tx”}, {“Hopdoddy” : “...”}, …
-
     '''
     
-    pass
+    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()) )
+    action = webdriver.ActionChains(driver)
+    driver.get("https://www.google.com/maps")
+    driver.maximize_window()
+    
+    time.sleep(2)
+
+    # Search Location
+    searchBox = driver.find_element(By.ID, "searchboxinput")
+    searchBox.clear()
+    searchBox.send_keys(address)
+    searchBox.send_keys(Keys.RETURN)
+    
+    time.sleep(1)
+    
+    # Search Item
+    searchBox.clear()
+    searchBox.send_keys(item)
+    searchBox.send_keys(Keys.RETURN)
+    
+    time.sleep(3)
+    
+    # Scroll Window to Load Results
+    results_window = driver.find_element(By.XPATH, '/html/body/div[3]/div[9]/div[9]/div/div/div[1]/div[2]/div/div[1]/div/div/div[2]/div[1]')
+
+    # Scroll down 3 times, will have to be changed if we edit number of stores, it should probably be something like Math.Ceil(NumberOfStores / 25 * 3)
+    for i in range(3):
+        driver.execute_script('arguments[0].scrollTop = arguments[0].scrollHeight', results_window)
+        time.sleep(2)
+
+    
+    results = {}
+
+    # Exception here because there are not enough stores in normal response
+    for i in range(3,number_of_stores*2 + 3,2): 
+        try:
+            location_name = f"/html/body/div[3]/div[9]/div[9]/div/div/div[1]/div[2]/div/div[1]/div/div/div[2]/div[1]/div[{i}]/div/div[2]/div[4]/div[1]/div/div/div[2]/div[1]/div[2]"
+            namebox = driver.find_element(By.XPATH, str(location_name))
+        
+            name = namebox.text
+
+            address_loc = f"/html/body/div[3]/div[9]/div[9]/div/div/div[1]/div[2]/div/div[1]/div/div/div[2]/div[1]/div[{i}]/div/div[2]/div[4]/div[1]/div/div/div[2]/div[4]/div[1]/span[2]/span[2]"
+            addressbox = driver.find_element(By.XPATH, str(address_loc))
+            
+            address = addressbox.text
+            
+            results[name] = address
+        except:
+            print("Out of Results")
+            break
+
+    
+    driver.quit()
+    
+    return results
 
 from geopy import Nominatim
 from geopy import distance
