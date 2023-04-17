@@ -13,22 +13,22 @@ export default {
     <div class = "title"> 
         <h2>Input Item</h2>
     </div>
-    <input class ="text" type="text" v-model="postData.item" placeholder="Search..." />
+    <input class ="text" type="text" v-on:input="updateItem" placeholder="Search..." />
 
     <div class = "title"> 
         <h2>Current Location</h2>
     </div>
-    <input class ="text" type="text" v-model="postData.location" placeholder="Search..." />
+    <input class ="text" type="text" v-on:input="updateLocType" placeholder="Search..." />
 
     <div class = "title">
         <h2>Search Radius (miles)</h2>
     </div>
     <div class = "radius-buttons">
-    <button class ="buttons" @click="toggle">1</button>
-    <button class ="buttons" @click="toggle">5</button>
-    <button class ="buttons" @click="toggle">10</button>
-    <button class ="buttons" @click="toggle">15</button>
-    <button class ="buttons" @click="toggle">20</button>
+    <button class ="buttons" @click = updateRadius(1)>1</button>
+    <button class ="buttons" @click = updateRadius(5)>5</button>
+    <button class ="buttons" @click = updateRadius(10)>10</button>
+    <button class ="buttons" @click = updateRadius(15)>15</button>
+    <button class ="buttons" @click = updateRadius(20)>20</button>
      </div>
      <div class = "bottom-user">
       <div class = "open-store">
@@ -37,7 +37,7 @@ export default {
       </div>
       <router-link to="/result" custom v-slot="{ navigate }">
         <!--<button class="pill" @click="createGet()">Search</button>-->
-        <button class="pill" @click = navigate>Search</button>
+        <button class="pill" @click = increment()>Search</button>
       </router-link>
     </div>
     
@@ -82,6 +82,25 @@ export default{
       }else if(typeOfData === 'get'){
         console.log(JSON.parse(this.getResponse))
       }
+    },
+
+    increment(){
+      console.log(this.$store.state.locationType)
+      console.log(this.$store.state.item)
+      console.log(this.$store.state.radius)
+
+    },
+
+    updateLocType(event){
+      this.$store.commit('setLocationType', event.target.value)
+    },
+
+    updateItem(event){
+      this.$store.commit('setItem', event.target.value)
+    },
+
+    updateRadius(r){
+      this.$store.commit('setRadius', r)
     }
   }
 }

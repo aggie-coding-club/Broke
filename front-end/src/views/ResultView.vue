@@ -4,6 +4,7 @@ import PlaceholderStores from "../components/PlaceholderStores.vue";
 import Nav from '../components/Nav.vue'
 
 </script>
+
 <template>
   <div class = "result-view">
   <div class = "map-view">
