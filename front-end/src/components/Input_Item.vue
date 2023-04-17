@@ -36,8 +36,8 @@ export default {
         <input type ="checkbox" value="Display open stores only" id="Display open stores only" class = "checkbox">
       </div>
       <router-link to="/result" custom v-slot="{ navigate }">
-        <!--<button class="pill" @click="createGet()">Search</button>-->
-        <button class="pill" @click = navigate>Search</button>
+        <button class="pill" @click="createGet()">Search</button>
+        <!--<button class="pill" @click = navigate>Search</button>-->
       </router-link>
     </div>
     
@@ -69,11 +69,13 @@ export default{
     createPost(){
       axios.post('http://127.0.0.1:5000/restdemo', this.postData)
         .then((response) => {this.postResponse = JSON.stringify(response.data); this.printData('post');})
+        this.$router.push('/result')
     },
 
     createGet(){
       axios.get('http://127.0.0.1:5000/restdemo')
         .then((response) => {this.getResponse = JSON.stringify(response.data); this.printData('get');})
+        this.$router.push('/result')
     },
 
     printData(typeOfData){
