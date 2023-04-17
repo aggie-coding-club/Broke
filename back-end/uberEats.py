@@ -54,21 +54,24 @@ def uberEats(stores : list, item : str, address: str) -> dict:
 
         time.sleep(2)
 
-        # Scraping Restaurant- Get first search result
+        # Scraping Restaurant- Get first search result //*[@id="main-content"]/div/div/div[2]/div/div[2]/div[1]
+        # //*[@id="main-content"]/div/div/div[2]/div/div[2]/div[2]
         WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.XPATH, '//*[@id="main-content"]/div/div/div[2]/div/div[2]')))
         results = driver.find_element(By.XPATH, '//*[@id="main-content"]/div/div/div[2]/div/div[2]')
-        WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.TAG_NAME, 'a')))
-        try:
-            name = results.find_element(By.TAG_NAME, 'a')
-        except:
-            print('fml')
-            continue
-        print(name.text)
+
+        WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.TAG_NAME, 'a')))
+        names = results.find_elements(By.TAG_NAME, 'a')
+        name = ''
+        for _name in names:
+            print(_name.text)
+            if restaurant in _name.text:
+                name = _name.text
+                break
 
         # click on restaurant and navigate to menu page
         #time.sleep(2)
-        WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.LINK_TEXT, name.text)))
-        link = driver.find_element(By.LINK_TEXT, name.text)
+        WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.LINK_TEXT, name)))
+        link = driver.find_element(By.LINK_TEXT, name)
         driver.execute_script('arguments[0].click()', link)
 
         time.sleep(3)
