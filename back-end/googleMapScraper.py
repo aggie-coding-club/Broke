@@ -90,16 +90,22 @@ def filterAddress(address : str) -> str:
     '''
     unit_result = 'unit' in address.lower()
     building_result = 'building' in address.lower()
+    suite_result = 'suite' in address.lower()
     if unit_result:
         unit_index = address.lower().index('unit')
-        space_index = address.lower().index(' ', unit_index) + 1
-        city_index = address.lower().index(' ', space_index)
-        return address[0: unit_index] + address[city_index:]
+        #space_index = address.lower().index(' ', unit_index) + 1
+        #city_index = address.lower().index(' ', space_index)
+        return address[0: unit_index] #+ address[city_index:]
     elif building_result:
         building_index = address.lower().index('building')
-        space_index = address.lower().index(' ', building_index) + 1
-        city_index = address.lower().index(' ', space_index)
-        return address[0: building_index] + address[city_index:]
+        #space_index = address.lower().index(' ', building_index) + 1
+        #city_index = address.lower().index(' ', space_index)
+        return address[0: building_index] #+ address[city_index:]
+    elif suite_result:
+        suite_index = address.lower().index('suite')
+        #space_index = address.lower().index(' ', suite_index) + 1
+        #city_index = address.lower().index(' ', space_index)
+        return address[0: suite_index]##+ address[city_index:]
     return address
 
 
@@ -115,21 +121,27 @@ def distanceFunct(list_of_stores : dict, radius : int, address : str) -> dict:
     _, addr = g.geocode(address)
 
     address = filterAddress(address)
+
+    print(address)
     
     for store in list_of_stores:
         store_address = filterAddress(list_of_stores[store])
-        _, dict = g.geocode(store_address)
-        d = distance.distance(dict, addr).miles
+        print('store', store_address)
+        try:
+            _, dic = g.geocode(store_address)
+        except:
+            continue
+        d = distance.distance(dic, addr).miles
         if d <= radius:
             filtered_stores.update({store : store_address})
     
 
     return filtered_stores
 
-''' for checking purposes '''
-list_of_stores = {'McDonalds' : '801 University Dr College Station, Texas', 'Home' : '801 Luther St W, Unit 1102, College Station, Texas', 'Star Cinema Grill' : '1037 University Dr, College Station, Texas'}
-filtered_stores = distanceFunct(list_of_stores, 2, '125 Spence St, College Station, Texas')
-for store in filtered_stores:
-        print(store + " : " + filtered_stores[store])
+# ''' for checking purposes '''
+# list_of_stores = {'McDonalds' : '801 University Dr College Station, Texas', 'Home' : '801 Luther St W, Unit 1102, College Station, Texas', 'Star Cinema Grill' : '1037 University Dr, College Station, Texas'}
+# filtered_stores = distanceFunct(list_of_stores, 2, '125 Spence St, College Station, Texas')
+# for store in filtered_stores:
+#         print(store + " : " + filtered_stores[store])
 
-print(googleMap('burger', '2604 Zambia Drive, Cedar Park'))
+# print(googleMap('burger', '2604 Zambia Drive, Cedar Park'))

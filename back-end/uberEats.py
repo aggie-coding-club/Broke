@@ -57,8 +57,12 @@ def uberEats(stores : list, item : str, address: str) -> dict:
         # Scraping Restaurant- Get first search result
         WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.XPATH, '//*[@id="main-content"]/div/div/div[2]/div/div[2]')))
         results = driver.find_element(By.XPATH, '//*[@id="main-content"]/div/div/div[2]/div/div[2]')
-        WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.TAG_NAME, 'a')))
-        name = results.find_element(By.TAG_NAME, 'a')
+        WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.TAG_NAME, 'a')))
+        try:
+            name = results.find_element(By.TAG_NAME, 'a')
+        except:
+            print('fml')
+            continue
         print(name.text)
 
         # click on restaurant and navigate to menu page
@@ -67,7 +71,7 @@ def uberEats(stores : list, item : str, address: str) -> dict:
         link = driver.find_element(By.LINK_TEXT, name.text)
         driver.execute_script('arguments[0].click()', link)
 
-        #time.sleep(5)
+        time.sleep(3)
 
         # Try to find the search bar- if it cannot be accessed, go back to close the popup
         try:
@@ -86,14 +90,18 @@ def uberEats(stores : list, item : str, address: str) -> dict:
 
         # Obtain list of items from menu and process
         #time.sleep(5)
-        WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.XPATH, xpath)))
-        items = driver.find_elements(By.XPATH, xpath) 
+        try:
+            WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.XPATH, xpath)))
+            items = driver.find_elements(By.XPATH, xpath) 
+        except:
+            driver.back()
+            continue
         # Look for cheapest option, add cheapest to dictionary
         # Cycle through categories of menu
         for category in items:
             try:
                 category_name = category.find_element(By.TAG_NAME, 'h3')
-                print("----Category: " + category_name.text)
+                #print("----Category: " + category_name.text)
 
                 # Get menu items and information
                 WebDriverWait(category, 10).until(EC.presence_of_element_located((By.XPATH, './ul')))
@@ -116,7 +124,7 @@ def uberEats(stores : list, item : str, address: str) -> dict:
                         # remove dollar sign
                         item_price = item_price[1:]
                         # If category contains keywords
-                        print(item_name + " " + item_price)
+                        #print(item_name + " " + item_price)
                         if item.lower() in category_name.text.lower():
                             # if restaurant has not been added or new product is cheaper
                             if restaurant not in scraped_products or scraped_products[restaurant][1] > float(item_price):
@@ -126,11 +134,13 @@ def uberEats(stores : list, item : str, address: str) -> dict:
                             if restaurant not in scraped_products or scraped_products[restaurant][1] > float(item_price):
                                 scraped_products[restaurant] = (item_name, float(item_price))
                     except Exception as e:
-                        print(e)
-                        print("No data in this menu entry")
+                        #print(e)
+                        #print("No data in this menu entry")
+                        pass
             except:
                 # gap in the menu- skip over since no data is displayed in element block
-                print("No data in this category")
+                #print("No data in this category")
+                pass
 
         # Navigate back to list of restaurants
         time.sleep(1)
@@ -139,9 +149,9 @@ def uberEats(stores : list, item : str, address: str) -> dict:
 
     return scraped_products
 
-address = "125 Spence St, College Station" #Zachry Engineering Building
-item = "Matcha"
-stores = ["Starbucks", "Sharetea"]
-results = uberEats(stores, item, address)
-print("Results:")
-print(results)
+# address = "125 Spence St, College Station" #Zachry Engineering Building
+# item = "Matcha"
+# stores = ["Starbucks", "Sharetea"]
+# results = uberEats(stores, item, address)
+# print("Results:")
+# print(results)
