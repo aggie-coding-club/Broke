@@ -41,6 +41,7 @@ export default{
 <template>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter+Tight">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tilt+Prism">
 <div class="resultBox" v-show="!loading">
   <div v-for="store in processedData" :key="store[0]">
     <DisplayItem :store-name=store[1] :item-name=store[2] :price=store[3]
@@ -91,6 +92,11 @@ export default{
   font-family: "Josefin Sans", sans-serif;
 }
 .loading-text{
-  
+  /*position: fixed;*/
+  left: -7vw;
+  top: 21vh;
+  font-size: 40px;
+  /*font-family: "Tilt Prism", sans-serif;*/
+  font-family: "Tilt Prism", sans-serif;
 }
 </style>
