@@ -1,7 +1,5 @@
 <script setup>
-  import { def } from '@vue/shared';
   import DisplayItem from './DisplayItem.vue'
-  import { ref } from 'vue'
 </script>
 
 <script>
@@ -15,38 +13,27 @@ export default{
       processedData: [],
       id:0
     }
-    
   },
   mounted(){
     if(this.$store.state.address !== "" && this.$store.state.item !== ""){
-      axios.post('http://127.0.0.1:5000/findlocations', {'loctype': this.$store.state.locationType,
+      axios.post('http://127.0.0.1:5000/findlocations', {'loctype': this.$store.state.category,
           'item': this.$store.state.item, 'address': this.$store.state.address, 'radius': this.$store.state.radius})
         .then((response) => {this.results = JSON.parse(JSON.stringify(response.data));}).then(() =>
           {
-            //console.log(this.results);
             for (const key in this.results){
               if(this.results.hasOwnProperty(key)){
-                // console.log(key)
-                //console.log(this.results[key])
-                //value = this.$store.state.postResponse[key]
                 var jsonData = [this.id, key, this.results[key][0], this.results[key][1], this.results[key][2]]
 
-                //console.log(jsonData)
-
-                //this.stores.value.push(jsonData)
                 this.processedData.push(jsonData)
 
                 this.id += 1
               }
             }
 
-            //console.log(this.processedData)
             this.loading = false;
           }
         )
     }
-  },
-  methods: {
   }
 }
 </script>
@@ -102,5 +89,8 @@ export default{
   color: black;
   font-size: 1.2em;
   font-family: "Josefin Sans", sans-serif;
+}
+.loading-text{
+  
 }
 </style>

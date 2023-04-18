@@ -1,21 +1,8 @@
 <script>
 export default {
     methods: {
-        grocery_page() {
-            console.log("grocery") // grocery will be printed out to console when that button is clicked, the actual functionality will be added later on
-        },
-        dinning_page() {
-            console.log("dinning")
-        },
-        drinks_page() {
-            console.log("drinks")
-        },
-        gas_page() {
-            console.log("gas")
-        },
-
         storeAndNavigate(category){
-            this.$store.commit('setLocationType', category)
+            this.$store.commit('setCategory', category)
             this.$router.push('/userinput')
         }
     }
@@ -25,33 +12,26 @@ export default {
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans">
     <div class = "cat-buttons">
         <ul>
-            <!--
-            <li><button @click="grocery_page" role = "link" class="cate_btn">Grocery</button></li>
-            <li><button @click="dinning_page" class="cate_btn">Dining</button></li>
-            <li><button @click="drinks_page" class="cate_btn">Drinks</button></li>
-            <li><button @click="gas_page" class="cate_btn">Gas</button></li>
-            -->
             <li><button @click="storeAndNavigate('grocery')" class="cate_btn">Grocery</button></li>
             <li><button @click="storeAndNavigate('food')" class="cate_btn">Dining</button></li>
             <li><button @click="storeAndNavigate('drink')" class="cate_btn">Drinks</button></li>
             <li><button @click="storeAndNavigate('gas')" class="cate_btn">Gas</button></li>
         </ul>  
     </div>
-</template>
+</template> 
 
 <style>
     ul {
         list-style-type: none;
     }
     .cate_btn{
-        background-color: rgb(244, 244, 244)/*#dcf7f9 #f0fbff*/;
+        background-color: rgb(244, 244, 244);
         color: #808784;
         text-decoration: none;
         font-size: 2vw;
         padding: 3vh 2vw; 
         margin: 2vh 0px;
         border-radius: 15px;
-        /*left: 9vw;*/
         width: 20vw;
         transition: .4s;
         border: 1px solid black;

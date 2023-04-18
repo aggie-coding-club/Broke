@@ -1,31 +1,31 @@
 <script>
 export default {
-    props: {
-        storeName: String,
-        price: 0.0,
-        itemName: String,
-        address: String,
-        distance: 0.0,
-        hours: "N/A"
-    }
+  props: {
+      storeName: String,
+      price: 0.0,
+      itemName: String,
+      address: String,
+      distance: 0.0,
+      hours: "N/A"
+  }
 }
 </script>
 
 <template>
-      <div class="result">
-        <div class="flexbox">
-          <div class="storeName">{{storeName}}</div>
-          <div class="price">${{price}}</div>
-        </div>
-        <div class="flexbox">
-          <div class = "store-details">
-            <div class="dist">{{distance}} mi</div>
-            <div class="address">{{address}}</div>
-            <div class="hours">Hours: {{hours}}</div>
-          </div>
-          <div class="item-name">{{itemName}}</div>
-        </div>
+  <div class="result">
+    <div class="flexbox">
+      <div class="storeName">{{storeName}}</div>
+      <div class="price">${{price}}</div>
+    </div>
+    <div class="flexbox">
+      <div class = "store-details">
+        <div class="dist">{{distance}} mi</div>
+        <div class="address">{{address}}</div>
+        <div class="hours">Hours: {{hours}}</div>
       </div>
-    <br>
+      <div class="item-name">{{itemName}}</div>
+    </div>
+  </div>
+  <br>
 </template>
     
