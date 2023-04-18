@@ -8,10 +8,10 @@ from demoScraper import findLocations
 app = Flask(__name__)
 CORS(app)
 
-@app.route('/findlocations', methods=['GET'])
+@app.route('/findlocations', methods=['POST'])
 def rest_test():
     # GET allows front-end to get data from the back-end
-    if request.method == 'GET':
+    if request.method == 'POST':
         data = request.get_json()
         # calls function
         result = findLocations(data['loctype'], data['item'], data['address'], data['radius'])

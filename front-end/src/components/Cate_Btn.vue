@@ -13,6 +13,11 @@ export default {
         gas_page() {
             console.log("gas")
         },
+
+        storeAndNavigate(category){
+            this.$store.commit('setLocationType', category)
+            this.$router.push('/userinput')
+        }
     }
 }
 </script>
@@ -20,18 +25,16 @@ export default {
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans">
     <div class = "cat-buttons">
         <ul>
-            <router-link to="/userinput" custom v-slot="{ navigate }">
             <!--
             <li><button @click="grocery_page" role = "link" class="cate_btn">Grocery</button></li>
             <li><button @click="dinning_page" class="cate_btn">Dining</button></li>
             <li><button @click="drinks_page" class="cate_btn">Drinks</button></li>
             <li><button @click="gas_page" class="cate_btn">Gas</button></li>
             -->
-            <li><button @click="navigate" class="cate_btn">Grocery</button></li>
-            <li><button @click="navigate" class="cate_btn">Dining</button></li>
-            <li><button @click="navigate" class="cate_btn">Drinks</button></li>
-            <li><button @click="navigate" class="cate_btn">Gas</button></li>
-            </router-link>
+            <li><button @click="storeAndNavigate('grocery')" class="cate_btn">Grocery</button></li>
+            <li><button @click="storeAndNavigate('food')" class="cate_btn">Dining</button></li>
+            <li><button @click="storeAndNavigate('drink')" class="cate_btn">Drinks</button></li>
+            <li><button @click="storeAndNavigate('gas')" class="cate_btn">Gas</button></li>
         </ul>  
     </div>
 </template>

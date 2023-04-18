@@ -4,6 +4,7 @@ from uberEats import *
 import sys
 
 def findLocations(locationType, item, address, radius):
+    return {'McDad': ('Burger', 10.99), 'IDK': ('Sammy', 20.36)}
     if locationType == 'gas':
         pass
     elif locationType == 'drink' or locationType == 'food':
@@ -15,4 +16,4 @@ def findLocations(locationType, item, address, radius):
 
         print(final_items)
 
-findLocations('food', 'burger', '2604 Zambia Dr, Cedar Park', 5)
+#findLocations('food', 'burger', '2604 Zambia Dr, Cedar Park', 5)

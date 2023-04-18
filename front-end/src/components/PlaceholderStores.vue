@@ -1,4 +1,5 @@
 <script setup>
+  import { def } from '@vue/shared';
   import DisplayItem from './DisplayItem.vue'
   import { ref } from 'vue'
   const stores = ref([
@@ -6,6 +7,35 @@
     {id: 1, name: 'Costco', price: 69.69},
     {id: 2, name: 'Walmart', price: 19.99},
   ])
+
+  const data = ref({})
+</script>
+
+<script>
+export default{
+  data(){
+    return {
+      id: 0
+    }
+  },
+  mounted(){
+    //data = JSON.parse(this.$store.state.postResponse);
+
+   var data = this.$store.state.postResponse
+
+    for (const key in data){
+      if(data.hasOwnProperty(key)){
+        console.log(key)
+        console.log(this.$store.state.postResponse[key])
+        //value = this.$store.state.postResponse[key]
+        stores.value.push([id, key, this.$store.state.postResponse[key][0], this.$store.state.postResponse[key][1]])
+
+        id = id + 1
+      }
+    }
+  },
+
+}
 </script>
 
 <template>

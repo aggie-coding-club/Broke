@@ -12,7 +12,8 @@ const store = createStore({
             locationType: "",
             item: "",
             address: "",
-            radius: 0
+            radius: 0,
+            postResponse: {}
         }
     },
     mutations: {
@@ -30,6 +31,14 @@ const store = createStore({
 
         setRadius(state, r){
             state.radius = r;
+        },
+
+        setAddress(state, addr){
+            state.address = addr;
+        },
+
+        setPostResponse(state, pr){
+            state.postResponse = pr;
         }
     }
 })

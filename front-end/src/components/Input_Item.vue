@@ -1,12 +1,3 @@
-export default {
-  data() {
-    return {
-      isActive: false,
-    };
-  },
-};
-
-
 <template>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans">
   <div>
@@ -60,9 +51,24 @@ export default{
         item: '',
         location: ''
       },
+      getData: {
+        loctype: '',
+        item: '',
+        location: '',
+        radius: 5
+      },
       getResponse: [],
       postResponse: []
     }
+  },
+
+  mounted(){
+      this.$store.commit('setAddress', "")
+      //this.getData.loctype = ""
+      this.$store.commit('setItem', "")
+      //this.getData.item = ""
+      this.$store.commit('setRadius', 5)
+      //this.getData.radius = 5
   },
 
   methods: {
@@ -73,14 +79,23 @@ export default{
     },
 
     createGet(){
-      axios.get('http://127.0.0.1:5000/restdemo')
-        .then((response) => {this.getResponse = JSON.stringify(response.data); this.printData('get');})
-        this.$router.push('/result')
+      if(this.$store.state.address !== "" && this.$store.state.item !== ""){
+        axios.post('http://127.0.0.1:5000/findlocations', {'loctype': this.$store.state.locationType,
+            'item': this.$store.state.item, 'address': this.$store.state.address, 'radius': this.$store.state.radius})
+          .then((response) => {this.postResponse = JSON.stringify(response.data); this.$store.commit('setPostResponse',
+            this.postResponse); this.printData('post'); this.$router.push('/result');})
+      }
     },
 
     printData(typeOfData){
       if(typeOfData === 'post'){
         console.log(JSON.parse(this.postResponse))
+        console.log(this.$store.state.postResponse)
+
+        const res = JSON.parse(this.$store.state.postResponse);
+        this.$store.commit('setPostResponse', res);
+
+
       }else if(typeOfData === 'get'){
         console.log(JSON.parse(this.getResponse))
       }
@@ -94,7 +109,7 @@ export default{
     },
 
     updateLocType(event){
-      this.$store.commit('setLocationType', event.target.value)
+      this.$store.commit('setAddress', event.target.value)
     },
 
     updateItem(event){
