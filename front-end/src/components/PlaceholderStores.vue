@@ -2,220 +2,69 @@
   import { def } from '@vue/shared';
   import DisplayItem from './DisplayItem.vue'
   import { ref } from 'vue'
-  const stores = ref([
-    {id: 0, name: 'HEB', price: 10.99},
-    {id: 1, name: 'Costco', price: 69.69},
-    {id: 2, name: 'Walmart', price: 19.99},
-  ])
-
-  const data = ref({})
 </script>
 
 <script>
+import axios from "axios";
+
 export default{
   data(){
     return {
-      id: 0
+      results: [],
+      loading: true,
+      processedData: [],
+      id:0
     }
+    
   },
   mounted(){
-    //data = JSON.parse(this.$store.state.postResponse);
+    if(this.$store.state.address !== "" && this.$store.state.item !== ""){
+      axios.post('http://127.0.0.1:5000/findlocations', {'loctype': this.$store.state.locationType,
+          'item': this.$store.state.item, 'address': this.$store.state.address, 'radius': this.$store.state.radius})
+        .then((response) => {this.results = JSON.parse(JSON.stringify(response.data));}).then(() =>
+          {
+            //console.log(this.results);
+            for (const key in this.results){
+              if(this.results.hasOwnProperty(key)){
+                // console.log(key)
+                //console.log(this.results[key])
+                //value = this.$store.state.postResponse[key]
+                var jsonData = [this.id, key, this.results[key][0], this.results[key][1], this.results[key][2]]
 
-   var data = this.$store.state.postResponse
+                //console.log(jsonData)
 
-    for (const key in data){
-      if(data.hasOwnProperty(key)){
-        console.log(key)
-        console.log(this.$store.state.postResponse[key])
-        //value = this.$store.state.postResponse[key]
-        stores.value.push([id, key, this.$store.state.postResponse[key][0], this.$store.state.postResponse[key][1]])
+                //this.stores.value.push(jsonData)
+                this.processedData.push(jsonData)
 
-        id = id + 1
-      }
+                this.id += 1
+              }
+            }
+
+            //console.log(this.processedData)
+            this.loading = false;
+          }
+        )
     }
   },
-
+  methods: {
+  }
 }
 </script>
 
 <template>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter+Tight">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans">
-<div class="resultBox">
-  <div v-for="store in stores" :key="store.id">
-    <DisplayItem :store-name=store.name :price=store.price></DisplayItem>
+<div class="resultBox" v-show="!loading">
+  <div v-for="store in processedData" :key="store[0]">
+    <DisplayItem :store-name=store[1] :item-name=store[2] :price=store[3]
+      :address=store[4] :hours="'N/A'" :distance=0.0></DisplayItem>
   </div>
-  
+</div>
+<div class="loading-text" v-show="loading">
+  <h1>Loading...</h1>
 </div>
 
 </template>
-<!--
-
-  <div class="resultBox">
-    <div class="result">
-      <div class="flexbox">
-        <div class="storeName">HEB</div>
-        <div class="price">$19.99</div>
-    </div>
-    <div class="flexbox">
-      <div class = "store-details">
-        <div class="dist">2.5 mi</div>
-        <div class="address">123 Main St. College Station, TX</div>
-        <div class="hours">6AM - 6PM</div>
-      </div>
-      <div class="item-name">HEB Select Ingredients Tomato Sauce 8oz</div>
-    </div>
-    
-  </div>
-  <br>
-
-  <div class="result">
-    <div class="flexbox">
-      <div class="storeName">Costco</div>
-      <div class="price">$19.99</div>
-    </div>
-    <div class="flexbox">
-      <div class = "store-details">
-        <div class="dist">2.5 mi</div>
-        <div class="address">123 Main St. College Station, TX</div>
-        <div class="hours">6AM - 6PM</div>
-      </div>
-      <div class="item-name">Costco Select Ingredients Tomato Sauce 8oz</div>
-    </div>
-  </div>
-  <br>
-  
-  <div class="result">
-    <div class="flexbox">
-       	<div class="storeName">Walmart</div>
-        <div class="price">$19.99</div>
-      </div>
-      <div class="flexbox">
-        <div class = "store-details">
-        <div class="dist">2.5 mi</div>
-        <div class="address">123 Main St. College Station, TX</div>
-        <div class="hours">6AM - 6PM</div>
-      </div>
-      <div class="item-name">Walmart Select Ingredients Tomato Sauce 8oz</div>
-    </div>
-  </div>  
-  <br>
-
-  <div class="result">
-    <div class="flexbox">
-      <div class="storeName">Really Long Name Here</div>
-        <div class="price">$19.99</div>
-    </div>
-    <div class="flexbox">
-      <div class = "store-details">
-        <div class="dist">2.5 mi</div>
-        <div class="address">123 Main St. College Station, TX</div>
-        <div class="hours">6AM - 6PM</div>
-      </div>
-      <div class="item-name">XXX Select Ingredients Tomato Sauce 8oz</div>
-    </div>
-  </div>
-  <br>
-  
-  <div class="result">
-    <div class="flexbox">
-       	<div class="storeName">Brookshire Brothers Express (Add on for length)</div>
-        <div class="price">$19.99</div>
-    </div>
-    <div class="flexbox">
-      <div class = "store-details">
-        <div class="dist">2.5 mi</div>
-        <div class="address">123 Main St. College Station, TX</div>
-        <div class="hours">6AM - 6PM</div>
-      </div>
-      <div class="item-name">Brookshire Brothers Select Ingredients Tomato Sauce 8oz</div>
-    </div>
-  </div>
-  <br>
-
-  <div class="result">
-    <div class="flexbox">
-       	<div class="storeName">Brookshire Brothers Express (Add on for length)</div>
-        <div class="price">$19.99</div>
-    </div>
-    <div class="flexbox">
-      <div class = "store-details">
-        <div class="dist">2.5 mi</div>
-        <div class="address">123 Main St. College Station, TX</div>
-        <div class="hours">6AM - 6PM</div>
-      </div>
-      <div class="item-name">Brookshire Brothers Select Ingredients Tomato Sauce 8oz</div>
-    </div>
-  </div>
-  <br>
-
-  <div class="result">
-    <div class="flexbox">
-       	<div class="storeName">Brookshire Brothers Express (Add on for length)</div>
-        <div class="price">$19.99</div>
-    </div>
-    <div class="flexbox">
-      <div class = "store-details">
-        <div class="dist">2.5 mi</div>
-        <div class="address">123 Main St. College Station, TX</div>
-        <div class="hours">6AM - 6PM</div>
-      </div>
-      <div class="item-name">Brookshire Brothers Select Ingredients Tomato Sauce 8oz</div>
-    </div>
-  </div>
-  <br>
-
-  <div class="result">
-    <div class="flexbox">
-       	<div class="storeName">Brookshire Brothers Express (Add on for length)</div>
-        <div class="price">$19.99</div>
-    </div>
-    <div class="flexbox">
-      <div class = "store-details">
-        <div class="dist">2.5 mi</div>
-        <div class="address">123 Main St. College Station, TX</div>
-        <div class="hours">6AM - 6PM</div>
-      </div>
-      <div class="item-name">Brookshire Brothers Select Ingredients Tomato Sauce 8oz</div>
-    </div>
-  </div>
-  <br>
-
-  <div class="result">
-    <div class="flexbox">
-       	<div class="storeName">Brookshire Brothers Express (Add on for length)</div>
-        <div class="price">$19.99</div>
-      </div>
-    <div class="flexbox">
-      <div class = "store-details">
-        <div class="dist">2.5 mi</div>
-        <div class="address">123 Main St. College Station, TX</div>
-        <div class="hours">6AM - 6PM</div>
-      </div>
-      <div class="item-name">Brookshire Brothers Select Ingredients Tomato Sauce 8oz</div>
-    </div>
-  </div>
-  <br>
-
-  <div class="result">
-    <div class="flexbox">
-       	<div class="storeName">Brookshire Brothers Express (Add on for length)</div>
-        <div class="price">$19.99</div>
-    </div>
-    <div class="flexbox">
-      <div class = "store-details">
-        <div class="dist">2.5 mi</div>
-        <div class="address">123 Main St. College Station, TX</div>
-        <div class="hours">6AM - 6PM</div>
-      </div>
-      <div class="item-name">Brookshire Brothers Select Ingredients Tomato Sauce 8oz</div>
-    </div>
-  </div>
-</div>  
-</template>
--->
-
-
 
 <style>
 .resultBox {

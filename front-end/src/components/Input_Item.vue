@@ -27,7 +27,7 @@
         <input type ="checkbox" value="Display open stores only" id="Display open stores only" class = "checkbox">
       </div>
       <router-link to="/result" custom v-slot="{ navigate }">
-        <button class="pill" @click="createGet()">Search</button>
+        <button class="pill" @click="checkParamsAndPush()">Search</button>
         <!--<button class="pill" @click = navigate>Search</button>-->
       </router-link>
     </div>
@@ -78,13 +78,15 @@ export default{
         this.$router.push('/result')
     },
 
-    createGet(){
+    checkParamsAndPush(){
       if(this.$store.state.address !== "" && this.$store.state.item !== ""){
-        axios.post('http://127.0.0.1:5000/findlocations', {'loctype': this.$store.state.locationType,
-            'item': this.$store.state.item, 'address': this.$store.state.address, 'radius': this.$store.state.radius})
-          .then((response) => {this.postResponse = JSON.stringify(response.data); this.$store.commit('setPostResponse',
-            this.postResponse); this.printData('post'); this.$router.push('/result');})
+        this.$router.push('/result');
       }
+      //   axios.post('http://127.0.0.1:5000/findlocations', {'loctype': this.$store.state.locationType,
+      //       'item': this.$store.state.item, 'address': this.$store.state.address, 'radius': this.$store.state.radius})
+      //     .then((response) => {this.postResponse = JSON.stringify(response.data); this.$store.commit('setPostResponse',
+      //       this.postResponse); this.printData('post'); this.$router.push('/result');})
+      // }
     },
 
     printData(typeOfData){

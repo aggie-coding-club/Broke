@@ -2,7 +2,11 @@
 export default {
     props: {
         storeName: String,
-        price: 0.0
+        price: 0.0,
+        itemName: String,
+        address: String,
+        distance: 0.0,
+        hours: "N/A"
     }
 }
 </script>
@@ -15,11 +19,11 @@ export default {
         </div>
         <div class="flexbox">
           <div class = "store-details">
-            <div class="dist">2.5 mi</div>
-            <div class="address">123 Main St. College Station, TX</div>
-            <div class="hours">6AM - 6PM</div>
+            <div class="dist">{{distance}} mi</div>
+            <div class="address">{{address}}</div>
+            <div class="hours">Hours: {{hours}}</div>
           </div>
-          <div class="item-name">HEB Select Ingredients Tomato Sauce 8oz</div>
+          <div class="item-name">{{itemName}}</div>
         </div>
       </div>
     <br>
