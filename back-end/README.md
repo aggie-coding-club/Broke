@@ -9,18 +9,17 @@ This template should help get you started developing with Python and Selenium.
 
 ### Install Python
 Check for python3 version if greater than 3.8
-    ```
-    python3 --version
-    ```
+```
+python3 --version
+```
 
 Windows: 
 - Go to Python.org and install Windows’s version
 
 Mac:
-
-    ```
-    brew install python@3.8
-    ```
+```
+brew install python@3.8
+```
 
 <br>
 
