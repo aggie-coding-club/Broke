@@ -45,7 +45,7 @@ To deactivate the environment, simply run the command "deactivate".
 ### Selenium Install
 To install the necessary files, activate the virtual enviornment and run the following command
 ```
-pip install -r requirements.txt"
+pip install -r requirements.txt
 ```
 
 <br>
