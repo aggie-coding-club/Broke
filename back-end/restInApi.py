@@ -8,6 +8,15 @@ CORS(app)
 
 @app.route('/findlocations', methods=['POST'])
 def rest_test():
+    """Handles POST requests to the backend
+
+    Returns
+    -------
+    dict
+        a JSON object of a dictionary containing stores that
+        contain the desired item 
+    """
+
     # POST request to handle the data request from the front-end
     if request.method == 'POST':
         data = request.get_json()

@@ -11,18 +11,27 @@ import re
 
 import time
 
-def uberEats(stores : list, item : str, address: str) -> dict:
-    '''
-    Locate address bar
-    Enter address, hit enter
-    Locate search bar
-    Send text, hit enter
-    Find the restaurant title, click on it 
-    Go through the menu, find keywords that matches searched item
-    Return a dictionary of store name as the key, and tuple as value
-    {"Hopdoddy" : ("cheeseburger", 10.99)}
+def uberEats(stores : list[str], item : str, address: str) -> dict[str, tuple]:
+    """Uses UberEats to find the price of the requested\n
+    item at different restaurants
 
-    '''
+    Parameters
+    ----------
+    stores : list
+        List of the stores to be scraped
+    item : str
+        The item to be searched for
+    address : str
+        The address of the user to be used in UberEats
+
+    Returns
+    -------
+    dict
+        Dictionary containing the item, along with its price, found at each location.\n
+        Only keeps the single item with the lowest price from each location. The\n
+        dictionary is in the form {store name : (item name at store, price)}
+    """
+    
     # Driver
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
     driver.get("https://www.ubereats.com/")
