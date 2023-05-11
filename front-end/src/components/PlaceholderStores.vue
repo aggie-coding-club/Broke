@@ -1,3 +1,15 @@
+<!--
+Description:
+
+Component that creates the back-end POST request to get the stores that contain
+the requested item. It then takes that data and creates a display element for
+each store with the relevant information.
+
+Used in:
+
+ResultView.vue
+-->
+
 <script setup>
   import DisplayItem from './DisplayItem.vue'
 </script>

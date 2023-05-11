@@ -1,3 +1,13 @@
+<!--
+Description:
+
+Component that positions the logo for the project.
+
+Used in:
+
+HomeView.vue, ResultView.vue, UserInputView.vue
+-->
+
 <template>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans">
     <div class="logo-wrapper">

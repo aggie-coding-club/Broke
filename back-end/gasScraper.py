@@ -10,11 +10,22 @@ from selenium.webdriver.support import expected_conditions as EC
 import time
 
 
-def gasSearch(input: str, address: str) -> list:
+def gasSearch(input: str, address: str) -> list[tuple]:
+    """Finds gas prices near the requested address
 
-    '''
-    take 2 parameters, type_of_gas specifiying regular or diesel, and radius
-    '''
+    Parameters
+    ----------
+    input : str
+        Which type of gas to search for (diesel or regular)
+    address : str
+        The address of the user
+
+    Returns
+    -------
+    list
+        List containing tuples of the form\n
+        (store name, gas price, location of store)
+    """
 
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()) )
     driver.get("https://www.gasbuddy.com/home")
@@ -83,7 +94,7 @@ def gasSearch(input: str, address: str) -> list:
             continue
         
         # add to list
-        station_list.append([name, address, price])
+        station_list.append((name, address, price))
 
         print(name + " " + address + " " + price)
 
@@ -91,5 +102,5 @@ def gasSearch(input: str, address: str) -> list:
     return station_list
 
 
-gas = gasSearch("diesel", "Bronx")
+#gas = gasSearch("diesel", "Bronx")
 

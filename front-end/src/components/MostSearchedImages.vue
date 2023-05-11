@@ -1,3 +1,14 @@
+<!--
+Description:
+
+Component that positions the images for the most searched items. This feature
+is not fully implemented and is currently a proof of concept.
+
+Used in:
+
+UserInputView.vue
+-->
+
 <script>
 export default {
   data() {
