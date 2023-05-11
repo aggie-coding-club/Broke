@@ -47,3 +47,15 @@ To install the necessary files, activate the virtual enviornment and run the fol
 ```
 pip install -r requirements.txt"
 ```
+
+<br>
+
+### Running Flask 
+Type the following line in the activated virtual environment:
+```
+flask --app hello run
+```
+or
+```
+Flask --app hello run
+```
