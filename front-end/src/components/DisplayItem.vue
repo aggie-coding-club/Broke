@@ -1,3 +1,14 @@
+<!--
+Description:
+
+Component that creates a single display box that contains the information for
+a single store returned from the back-end.
+
+Used in:
+
+PlaceholderStores.vue
+-->
+
 <script>
 export default {
   props: {

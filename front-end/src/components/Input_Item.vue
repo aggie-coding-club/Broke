@@ -1,3 +1,14 @@
+<!--
+Description:
+
+Component that creates the input features to receive information from the user.
+The user will input the item name, their location, and their desired search radius.
+
+Used in:
+
+UserInputView.vue
+-->
+
 <template>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans">
   <div>

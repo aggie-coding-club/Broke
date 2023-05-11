@@ -1,3 +1,14 @@
+<!--
+Description:
+
+Component that creates the category buttons on the main page. This contains four
+buttons: grocery, food, drinks, and gas.
+
+Used in:
+
+HomeView.vue
+-->
+
 <script>
 export default {
     methods: {
