@@ -18,6 +18,7 @@ Mac:
     ```
     brew install python@3.8
     ```
+
 <br>
 
 ### Virtual Enviornment Setup
