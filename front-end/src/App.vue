@@ -1,3 +1,11 @@
+<!--
+  Description:
+
+  Main file that coordinates all vue files together.
+  Uses rounterlink to switch between home page, user input page, and result page.
+  Includes the logo and footer so they are displayed independent of page nagivated to.
+-->
+
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
 import Footer from "./components/Footer.vue";
