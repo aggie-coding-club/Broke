@@ -13,3 +13,4 @@ Web scraping:
 - Plan to use websraping to find stores with desired items at lowest price
 - Use of Python Selenium
 
+More documentation on setting up the front-end and back-end can be found in their respective folder.
