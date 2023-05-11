@@ -1,3 +1,13 @@
+<!--
+Description:
+
+Component that creates the description of the project/website.
+
+Used in:
+
+HomeView.vue
+-->
+
 <template>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Exo+2">
         <div class="description-wrapper">

@@ -9,6 +9,7 @@ from selenium.webdriver.support import expected_conditions as EC
 
 import time
 
+"""Testing file that showcases the basics of webscraping using Selenium"""
 
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()) )
 driver.get("https://www.tamu.edu/")

@@ -1,18 +1,29 @@
+<!--
+Description:
+
+Component that creates the input features to receive information from the user.
+The user will input the item name, their location, and their desired search radius.
+
+Used in:
+
+UserInputView.vue
+-->
+
 <template>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans">
   <div>
     <div class = "title"> 
-        <h2>Input Item</h2>
+      <h2>Input Item</h2>
     </div>
     <input class ="text" type="text" v-on:input="updateItem" placeholder="Search..." />
 
     <div class = "title"> 
-        <h2>Current Location</h2>
+      <h2>Current Location</h2>
     </div>
     <input class ="text" type="text" v-on:input="updateLocType" placeholder="Search..." />
 
     <div class = "title">
-        <h2>Search Radius (miles)</h2>
+      <h2>Search Radius (miles)</h2>
     </div>
     <div class = "radius-buttons">
     <button class ="buttons" @click = updateRadius(1)>1</button>
@@ -26,86 +37,26 @@
         <label class = "open-store-label">Display open stores only </label>
         <input type ="checkbox" value="Display open stores only" id="Display open stores only" class = "checkbox">
       </div>
-      <router-link to="/result" custom v-slot="{ navigate }">
-        <button class="pill" @click="createGet()">Search</button>
-        <!--<button class="pill" @click = navigate>Search</button>-->
-      </router-link>
+      <button class="pill" @click="checkParamsAndPush()">Search</button>
     </div>
-    
   </div>
- 
- </template>
-
-<script setup>
-import { ref } from "vue";
-let input = ref("");
-</script>
+</template>
 
 <script>
-import axios from "axios";
-
 export default{
-  data(){
-    return {
-      postData: {
-        item: '',
-        location: ''
-      },
-      getData: {
-        loctype: '',
-        item: '',
-        location: '',
-        radius: 5
-      },
-      getResponse: [],
-      postResponse: []
-    }
-  },
-
   mounted(){
+      // setting components to default value when page loads
       this.$store.commit('setAddress', "")
-      //this.getData.loctype = ""
       this.$store.commit('setItem', "")
-      //this.getData.item = ""
       this.$store.commit('setRadius', 5)
-      //this.getData.radius = 5
   },
 
   methods: {
-    createPost(){
-      axios.post('http://127.0.0.1:5000/restdemo', this.postData)
-        .then((response) => {this.postResponse = JSON.stringify(response.data); this.printData('post');})
-        this.$router.push('/result')
-    },
-
-    createGet(){
+    // if address and item inputs are not empty, go to result page
+    checkParamsAndPush(){
       if(this.$store.state.address !== "" && this.$store.state.item !== ""){
-        axios.post('http://127.0.0.1:5000/findlocations', {'loctype': this.$store.state.locationType,
-            'item': this.$store.state.item, 'address': this.$store.state.address, 'radius': this.$store.state.radius})
-          .then((response) => {this.postResponse = JSON.stringify(response.data); this.$store.commit('setPostResponse',
-            this.postResponse); this.printData('post'); this.$router.push('/result');})
+        this.$router.push('/result');
       }
-    },
-
-    printData(typeOfData){
-      if(typeOfData === 'post'){
-        console.log(JSON.parse(this.postResponse))
-        console.log(this.$store.state.postResponse)
-
-        const res = JSON.parse(this.$store.state.postResponse);
-        this.$store.commit('setPostResponse', res);
-
-
-      }else if(typeOfData === 'get'){
-        console.log(JSON.parse(this.getResponse))
-      }
-    },
-
-    increment(){
-      console.log(this.$store.state.locationType)
-      console.log(this.$store.state.item)
-      console.log(this.$store.state.radius)
-
     },
 
     updateLocType(event){

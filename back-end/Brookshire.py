@@ -6,6 +6,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
+"""Testing file that is trying to scrape the Brookshire Brothers website"""
+
 import time
 
 # IGNORE THIS- TUTORIAL FOR SCRAPING

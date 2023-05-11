@@ -1,3 +1,14 @@
+<!--
+Description:
+
+Component that creates the Google maps display on the results page. This
+feature is currently not fully working.
+
+Used in:
+
+ResultView.vue
+-->
+
 <template>
   <div class="map-wrapper">
     <img

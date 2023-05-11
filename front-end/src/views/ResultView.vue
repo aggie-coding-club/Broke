@@ -1,3 +1,12 @@
+<!--
+  Description:
+
+  Final page displaying results of search.
+  Store information displayed to the right in individual rounded boxes.
+  Google map with store location displayed to the left (currently just a place-holder).
+  Logo, navigation bar, and footer are displayed on the result page but are used in App.vue.
+-->
+
 <script setup>
 import Map from "../components/Map.vue";
 import PlaceholderStores from "../components/PlaceholderStores.vue";
@@ -7,15 +16,15 @@ import Nav from '../components/Nav.vue'
 
 <template>
   <div class = "result-view">
-  <div class = "map-view">
-    <Map></Map>
-  </div>
-  <div class = "stores-view">
-    <PlaceholderStores></PlaceholderStores>
-  </div>
-  <div>
-    <Nav></Nav>
-  </div>
+    <div class = "map-view">
+      <Map></Map>
+    </div>
+    <div class = "stores-view">
+      <PlaceholderStores></PlaceholderStores>
+    </div>
+    <div>
+      <Nav></Nav>
+    </div>
 </div>
 </template>
 

@@ -8,21 +8,16 @@ import './assets/main.css'
 const store = createStore({
     state () {
         return {
-            count: 0,
-            locationType: "",
+            category: "",
             item: "",
             address: "",
             radius: 0,
             postResponse: {}
-        }
+        }   
     },
     mutations: {
-        increment (state) {
-            state.count++
-        },
-
-        setLocationType(state, locType){
-            state.locationType = locType;
+        setCategory(state, category){
+            state.category = category;
         },
 
         setItem(state, item){

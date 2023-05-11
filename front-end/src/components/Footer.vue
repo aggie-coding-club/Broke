@@ -1,3 +1,13 @@
+<!--
+Description:
+
+Component that creates the footer that displays contact information.
+
+Used in:
+
+HomeView.vue, ResultView.vue, UserInputView.vue
+-->
+
 <template>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter+Tight">
     <footer>

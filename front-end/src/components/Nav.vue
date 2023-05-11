@@ -1,3 +1,13 @@
+<!--
+Description:
+
+Component that creates the navbar that allows the user to go back to the home page.
+
+Used in:
+
+ResultView.vue, UserInputView.vue
+-->
+
 <script>
 </script>
 
