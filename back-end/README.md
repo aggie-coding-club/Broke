@@ -11,6 +11,7 @@ Check for python3 version if greater than 3.8
     ```
 Windows: 
 - Go to Python.org and install Windows’s version
+
 Mac:
     ```
     brew install python@3.8
