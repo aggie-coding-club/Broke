@@ -7,7 +7,7 @@ Broke is:
 User selects radius for target searching
 
 Display:
-- Using Google Map API, display user location and corresponding stores containing the desired items along with a list of stores with location and distance information
+- Using Google Map API (in progress), display user location and corresponding stores containing the desired items along with a list of stores with location and distance information
 
 Web scraping:
 - Plan to use websraping to find stores with desired items at lowest price
