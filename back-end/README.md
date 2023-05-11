@@ -9,6 +9,7 @@ Check for python3 version if greater than 3.8
     ```
     python3 --version
     ```
+\
 
 Windows: 
 - Go to Python.org and install Windows’s version
@@ -17,7 +18,7 @@ Mac:
     ```
     brew install python@3.8
     ```
-
+\
 
 ### Virtual Enviornment Setup
 In the powershell (windows) or terminal (Mac) run:
@@ -25,6 +26,7 @@ In the powershell (windows) or terminal (Mac) run:
 python3 -m venv venv
 ```
 Then, run the following command for your respective device
+
 Mac:
 ```
 source venv/bin/activate 
@@ -34,7 +36,7 @@ Windows:
 .\venv\Scripts\activate 
 ```
 
-To deactivate the environment, simply run the command "deactivate"
+To deactivate the environment, simply run the command "deactivate". 
 
 
 
