@@ -6,8 +6,6 @@ This template should help get you started developing with Python and Selenium.
 
 ## Project Setup
 
-<br>
-
 ### Install Python
 Check for python3 version if greater than 3.8
 ```
