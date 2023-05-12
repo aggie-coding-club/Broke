@@ -13,4 +13,5 @@ Web scraping:
 - Plan to use websraping to find stores with desired items at lowest price
 - Use of Python Selenium
 
-More documentation on setting up the front-end and back-end can be found in their respective folder.
+More documentation on setting up / running the front-end and back-end can be found in their respective folder.
+Make sure to run **both** the front-end **and** back-end on separate terminals (Mac) or Ubuntu and powershell (Windows) at the same time.
